@@ -1,0 +1,46 @@
+# FastAPI and ASGI Server
+fastapi==0.95.1
+uvicorn==0.22.0
+pydantic==1.10.7
+
+# Database
+motor==3.1.1  # Async MongoDB driver
+pymongo==4.3.3
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+
+# Web Scraping
+scrapy==2.9.0
+playwright==1.32.1
+beautifulsoup4==4.12.2
+
+# AI and ML
+openai==0.27.4
+scikit-learn==1.2.2
+
+# Localization
+babel==2.12.1
+
+# Additional Utilities
+requests==2.30.0
+httpx==0.24.0
+
+# Background Tasks
+celery==5.2.7
+redis==4.5.4
+
+# Deployment and Monitoring
+prometheus-client==0.16.0
+
+# Email
+fastapi-mail==1.2.8
+
+# WebSocket
+websockets==11.0.3
+
+# Testing
+pytest==7.3.1
+httpx==0.24.0

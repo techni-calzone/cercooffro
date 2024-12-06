@@ -1,0 +1,4 @@
+[submodule "premium"]
+    path = premium
+    url = git@github.com:your-org/student-rental-premium.git
+    branch = main

@@ -1,0 +1,28 @@
+{
+    "app_name": "Aggregatore Affitti Studenti",
+    "welcome_message": "Trova il tuo prossimo appartamento perfetto",
+    "search_placeholder": "Cerca appartamenti vicino alla tua università",
+    "filters": {
+        "price": "Prezzo",
+        "location": "Posizione",
+        "university": "Università"
+    },
+    "listing": {
+        "available": "Disponibile",
+        "sold": "Venduto",
+        "vote_status": "Vota lo stato"
+    },
+    "subscription": {
+        "free_tier": "Piano Gratuito",
+        "premium_tier": "Piano Premium",
+        "features": {
+            "basic_search": "Ricerca base",
+            "advanced_filters": "Filtri avanzati",
+            "priority_alerts": "Avvisi prioritari"
+        }
+    },
+    "errors": {
+        "no_listings": "Nessun appartamento trovato",
+        "search_error": "Errore durante la ricerca"
+    }
+}
