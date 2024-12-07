@@ -1,4 +1,4 @@
-# 🏠 Student Rental Aggregator
+# 🏠 CercoOffro - Student Rental Aggregator
 
 An AI-powered rental aggregation platform designed specifically for students in Italy, focusing on comprehensive housing search and recommendation features.
 
@@ -46,10 +46,22 @@ Detailed instructions in the [Development Guide](docs/DEVELOPMENT.md).
 
 ### Infrastructure
 - Docker
-- MongoDB
-- Redis
+- MongoDB (via MONGODB_URI env variable)
+- S3 (via S3_BUCKET env variable)
 - Prometheus
-- Grafana
+
+## 📦 Deployment
+
+To deploy the application, ensure the following environment variables are set:
+
+- `MONGODB_URI`: Connection string for MongoDB
+- `S3_BUCKET`: S3 bucket name for storage
+
+Use Docker Compose to start the services:
+
+```bash
+docker-compose up --build
+```
 
 ## 🤝 Contributing
 

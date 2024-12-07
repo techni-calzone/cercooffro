@@ -7,11 +7,11 @@ class Settings(BaseSettings):
     PROJECT_NAME: str = "Student Rental Aggregator"
     VERSION: str = "1.0.0"
     API_V1_STR: str = "/api/v1"
-    SECRET_KEY: str
+    SECRET_KEY: str = "your-secret-key-here"  # For development only
     ENVIRONMENT: str = "development"
     
     # Database
-    MONGODB_URI: str
+    MONGODB_URI: str = "mongodb://localhost:27017"
     DATABASE_NAME: str = "student_rental"
     
     # CORS
@@ -50,18 +50,16 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     return Settings()
 
-# Feature availability checks
+settings = get_settings()
+
 def is_premium_feature_enabled() -> bool:
-    settings = get_settings()
     return settings.ENABLE_PREMIUM_FEATURES
 
 def is_donation_enabled() -> bool:
-    settings = get_settings()
     return settings.DONATION_ENABLED
 
-# Premium feature requirements
-def check_premium_requirements():
-    settings = get_settings()
-    if settings.ENABLE_PREMIUM_FEATURES:
-        assert settings.OPENAI_API_KEY, "OpenAI API key required for premium features"
-        assert settings.STRIPE_SECRET_KEY, "Stripe secret key required for premium features"
+def check_premium_requirements() -> bool:
+    """Check if all required settings for premium features are configured."""
+    if not settings.ENABLE_PREMIUM_FEATURES:
+        return False
+    return bool(settings.OPENAI_API_KEY)

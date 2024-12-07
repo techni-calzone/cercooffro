@@ -1,8 +1,8 @@
-# Contributing to Student Rental Aggregator
+# Contributing to CercoOffro - Student Rental Aggregator
 
 ## 🎯 Overview
 
-Thank you for considering contributing to the Student Rental Aggregator project! This document provides guidelines and instructions for contributing to the open-source core of our platform.
+Thank you for considering contributing to the CercoOffro project! This document provides guidelines and instructions for contributing to the open-source core of our platform.
 
 ## 🌟 Core Values
 
@@ -50,14 +50,23 @@ python app/core/mock_data.py
 pytest
 ```
 
-2. **Environment Configuration**
+2. **Frontend Setup**
 ```bash
-# Copy example environment file
-cp .env.example .env
+# Navigate to the frontend directory
+cd frontend
 
-# Edit .env with your development settings
-# Note: Use mock data, never production credentials
+# Install frontend dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
+
+3. **Environment Variables**
+Ensure the following environment variables are set for local development:
+
+- `MONGODB_URI`: Connection string for MongoDB
+- `S3_BUCKET`: S3 bucket name for storage
 
 ## 🔧 Development Workflow
 

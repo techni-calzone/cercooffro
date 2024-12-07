@@ -20,7 +20,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
+.next/
 # Node
 node_modules/
 npm-debug.log*
@@ -40,20 +40,24 @@ yarn-error.log*
 .env.production
 .env.test
 
-# Proprietary Features
-backend/app/services/premium/
-backend/app/api/v1/premium/
-backend/app/core/ai/
-backend/app/models/premium/
-frontend/src/components/premium/
-frontend/src/features/premium/
+# Premium Features
+premium/
+**/premium/
+**/*premium*
+**/*.premium.*
+**/advanced-filters/
+**/ai-recommendations/
+**/priority-notifications/
+**/analytics/
 
-# Premium features
-/premium/*
-!/premium/README.md
+# Keep premium interface files
+!**/premium_interface.py
+!**/usePremiumFeatures.js
+!**/premium.js
 
-# Keep premium module configuration
-!.gitmodules
+# Premium documentation
+premium-docs/
+premium-*.md
 
 # Logs
 logs/

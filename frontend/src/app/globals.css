@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import custom datepicker styles */
+@import '../styles/datepicker.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@200;300;400;600;700&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: white;
+  color: #1F2937;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Custom React Datepicker Styles */
+.react-datepicker-wrapper {
+  @apply w-full;
+}
+
+.react-datepicker-popper {
+  @apply z-50 bg-white rounded-lg shadow-xl border border-gray-200;
+}
+
+.react-datepicker {
+  @apply border-none shadow-none;
+}
+
+.react-datepicker__month-container {
+  @apply w-full;
+}
+
+.react-datepicker__day--selected, 
+.react-datepicker__day--in-range {
+  @apply bg-cercooffro-primary text-white hover:bg-cercooffro-primary/90;
+}
+
+.react-datepicker__day--keyboard-selected {
+  @apply bg-cercooffro-primary/80 text-white;
+}
+
+.react-datepicker__day:hover {
+  @apply bg-cercooffro-primary/20;
+}
