@@ -3,6 +3,7 @@
 import React, { Suspense, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { 
   FaSearch, 
   FaMapMarkerAlt, 
@@ -11,7 +12,9 @@ import {
   FaCalendarAlt,
   FaKey,
   FaTimes,
-  FaBars
+  FaBars,
+  FaPlusCircle,
+  FaUserFriends
 } from 'react-icons/fa';
 
 import { useLanguage } from '../context/LanguageContext';
@@ -47,10 +50,26 @@ export const NavLinks = () => {
   return (
     <div className="hidden md:flex items-center space-x-6">
       <Link href="/about" className="text-gray-600 hover:text-cercooffro-primary">
-        {t('about')}
+        {t('navbar.about')}
       </Link>
       <Link href="/contact" className="text-gray-600 hover:text-cercooffro-primary">
-        {t('contact')}
+        {t('navbar.contact')}
+      </Link>
+      <Link 
+        href="/searchers" 
+        className="flex items-center space-x-2 text-gray-600 hover:text-cercooffro-primary"
+        aria-label={t('searchersPage.title')}
+      >
+        <FaUserFriends className="w-5 h-5" />
+        <span>{t('navbar.searchers')}</span>
+      </Link>
+      <Link 
+        href="/add-offer" 
+        className="flex items-center space-x-2 text-white bg-cercooffro-primary hover:bg-opacity-90 px-4 py-2 rounded-full transition-colors"
+        aria-label={t('navbar.addOfferDescription')}
+      >
+        <FaPlusCircle className="w-5 h-5" />
+        <span>{t('navbar.addOffer')}</span>
       </Link>
     </div>
   );
@@ -63,7 +82,7 @@ export const LanguageToggle = ({
   language: string; 
   toggleLanguage: () => void; 
 }) => {
-  const { t } = useLanguage();
+  const { t, language: lang } = useLanguage();
   
   return (
     <button 
@@ -71,16 +90,18 @@ export const LanguageToggle = ({
         e.preventDefault();
         toggleLanguage();
       }}
-      className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 transition-colors"
+      className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 transition-colors flex items-center space-x-1"
       aria-label={t('navbar.toggleLanguage')}
     >
-      {language.toUpperCase() === 'EN' ? 'IT' : 'EN'}
+      <span>{lang === 'en' ? '🇮🇹' : '🇬🇧'}</span>
+      <span>{lang === 'en' ? 'IT' : 'EN'}</span>
     </button>
   );
 };
 
 export const SearchBar = () => {
   const { t } = useLanguage();
+  const router = useRouter();
   const { 
     isLocationDropdownOpen,
     isDatesDropdownOpen,
@@ -94,57 +115,66 @@ export const SearchBar = () => {
     toggleDatesDropdown,
     toggleGuestsDropdown,
     toggleFilterDropdown,
-    toggleSearchModal
+    toggleSearchModal,
+    handleLocationSelect,
+    handleDatesSelect
   } = useNavBar();
+
+  const performSearch = () => {
+    const searchParams = new URLSearchParams();
+    
+    if (location) searchParams.set('location', location);
+    if (dates.startDate) searchParams.set('startDate', dates.startDate.toISOString());
+    if (dates.endDate) searchParams.set('endDate', dates.endDate.toISOString());
+    if (typeof guests === 'number' && guests > 0) searchParams.set('students', guests.toString());
+
+    router.push(`/listings?${searchParams.toString()}`);
+  };
 
   return (
     <div className="w-full max-w-2xl relative">
-      <div className="flex items-stretch bg-white border border-gray-300 rounded-full shadow-sm">
-        {/* Where */}
-        <div 
-          onClick={() => toggleLocationDropdown()}
-          className="flex-1 px-6 py-2 cursor-pointer hover:bg-gray-50 rounded-l-full transition-colors border-r border-gray-300"
-        >
-          <div className="flex items-center gap-2">
-            <FaMapMarkerAlt className="text-cercooffro-primary" />
-            <div>
-              <p className="text-sm font-medium">{t('where')}</p>
-              <p className="text-sm text-gray-500 truncate">
+      <div className="flex flex-col md:flex-row items-stretch bg-white border border-gray-300 rounded-xl md:rounded-full shadow-sm">
+        {/* Sections Container */}
+        <div className="grid grid-cols-1 md:grid-cols-3 w-full">
+          {/* Where */}
+          <div 
+            onClick={() => toggleLocationDropdown()}
+            className="px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors border-b md:border-b-0 md:border-r border-gray-300 flex items-center gap-3"
+          >
+            <FaMapMarkerAlt className="text-cercooffro-primary w-5 h-5 flex-shrink-0" />
+            <div className="flex-grow overflow-hidden">
+              <p className="text-xs font-medium truncate">{t('where')}</p>
+              <p className="text-xs text-gray-500 truncate max-w-[150px] md:max-w-none">
                 {location || t('searchCitiesUniversitiesOrRegions')}
               </p>
             </div>
           </div>
-        </div>
 
-        {/* When */}
-        <div 
-          onClick={() => toggleDatesDropdown()}
-          className="flex-1 px-6 py-2 cursor-pointer hover:bg-gray-50 transition-colors border-r border-gray-300"
-        >
-          <div className="flex items-center gap-2">
-            <FaCalendarAlt className="text-cercooffro-primary" />
-            <div>
-              <p className="text-sm font-medium">{t('when')}</p>
-              <p className="text-sm text-gray-500 truncate">
+          {/* When */}
+          <div 
+            onClick={() => toggleDatesDropdown()}
+            className="px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors border-b md:border-b-0 md:border-r border-gray-300 flex items-center gap-3"
+          >
+            <FaCalendarAlt className="text-cercooffro-primary w-5 h-5 flex-shrink-0" />
+            <div className="flex-grow overflow-hidden">
+              <p className="text-xs font-medium truncate">{t('when')}</p>
+              <p className="text-xs text-gray-500 truncate max-w-[150px] md:max-w-none">
                 {(dates.startDate && dates.endDate) 
                   ? `${dates.startDate.toLocaleDateString()} - ${dates.endDate.toLocaleDateString()}`
-                  : t('addDates')
-                }
+                  : t('addDates')}
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Who */}
-        <div 
-          onClick={() => toggleGuestsDropdown()}
-          className="flex-1 px-6 py-2 cursor-pointer hover:bg-gray-50 transition-colors border-r border-gray-300"
-        >
-          <div className="flex items-center gap-2">
-            <FaUsers className="text-cercooffro-primary" />
-            <div>
-              <p className="text-sm font-medium">{t('who')}</p>
-              <p className="text-sm text-gray-500 truncate">
+          {/* Who */}
+          <div 
+            onClick={() => toggleGuestsDropdown()}
+            className="px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors md:border-r border-gray-300 flex items-center gap-3"
+          >
+            <FaUsers className="text-cercooffro-primary w-5 h-5 flex-shrink-0" />
+            <div className="flex-grow overflow-hidden">
+              <p className="text-xs font-medium truncate">{t('who')}</p>
+              <p className="text-xs text-gray-500 truncate max-w-[150px] md:max-w-none">
                 {typeof guests === 'number' && guests > 0 
                   ? `${guests} ${t('students')}` 
                   : t('addGuests')}
@@ -153,24 +183,22 @@ export const SearchBar = () => {
           </div>
         </div>
 
-        {/* Filter and Search Buttons */}
-        <div className="flex items-stretch">
+        {/* Action Buttons */}
+        <div className="flex items-center justify-between p-2 md:p-1 space-x-2">
           <button 
             onClick={() => toggleFilterDropdown()}
-            className="px-4 flex items-center gap-4 text-gray-600 hover:text-cercooffro-primary hover:bg-gray-50  transition-colors rounded-r-full "
+            className="p-2 text-gray-600 hover:text-cercooffro-primary hover:bg-gray-50 rounded-full transition-colors"
             aria-label={t('filters.title')}
           >
-            <FaFilter className="w-5 h-5" />
+            <FaFilter className="w-4 h-4" />
           </button>
           <button 
-            onClick={() => {
-              // Handle search
-              console.log('Search clicked');
-            }}
-            className="px-6 py5 gap-2 flex items-center rounded-full bg-cercooffro-primary text-white hover:bg-cercooffro-primary/90 transition-colors"
+            onClick={performSearch}
+            className="px-4 py-2 bg-cercooffro-primary text-white rounded-full hover:bg-opacity-90 transition-colors flex items-center space-x-1"
             aria-label={t('search')}
           >
-            <FaSearch className="w-5 h-5" />
+            <FaSearch className="w-4 h-4" />
+            <span className="text-xs md:text-sm">{t('search')}</span>
           </button>
         </div>
       </div>
@@ -178,16 +206,20 @@ export const SearchBar = () => {
       {/* Dropdowns */}
       {isLocationDropdownOpen && (
         <Suspense fallback={<div className="mt-2 p-4 bg-white rounded-lg shadow-lg">{t('loading')}</div>}>
-          <LocationDropdown onClose={() => toggleLocationDropdown(false)} />
+          <LocationDropdown 
+            onClose={() => toggleLocationDropdown(false)} 
+            onSelect={handleLocationSelect}
+          />
         </Suspense>
       )}
-
       {isDatesDropdownOpen && (
         <Suspense fallback={<div className="mt-2 p-4 bg-white rounded-lg shadow-lg">{t('loading')}</div>}>
-          <DatesDropdown onClose={() => toggleDatesDropdown(false)} />
+          <DatesDropdown 
+            onClose={() => toggleDatesDropdown(false)} 
+            onSelect={handleDatesSelect}
+          />
         </Suspense>
       )}
-
       {isGuestsDropdownOpen && (
         <Suspense fallback={<div className="mt-2 p-4 bg-white rounded-lg shadow-lg">{t('loading')}</div>}>
           <GuestsDropdown onClose={() => toggleGuestsDropdown(false)} />
@@ -196,7 +228,13 @@ export const SearchBar = () => {
 
       {isFilterDropdownOpen && (
         <Suspense fallback={<div className="mt-2 p-4 bg-white rounded-lg shadow-lg">{t('loading')}</div>}>
-          <FilterDropdown onClose={() => toggleFilterDropdown(false)} />
+          <FilterDropdown 
+            onClose={() => toggleFilterDropdown(false)}
+            onApplyFilters={(filters) => {
+              console.log('Applied filters:', filters);
+              toggleFilterDropdown(false);
+            }}
+          />
         </Suspense>
       )}
     </div>
@@ -225,12 +263,7 @@ export const NavBar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <LanguageToggle language={language} toggleLanguage={toggleLanguage} />
-            <Link href="/about" className="text-gray-700 hover:text-cercooffro-primary">
-              {t('navbar.about')}
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-cercooffro-primary">
-              {t('navbar.contact')}
-            </Link>
+            <NavLinks />
           </div>
 
           {/* Mobile Menu Button */}
@@ -268,18 +301,7 @@ export const NavBar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
-              href="/about"
-              className="block px-3 py-2 text-gray-700 hover:text-cercooffro-primary"
-            >
-              {t('navbar.about')}
-            </Link>
-            <Link
-              href="/contact"
-              className="block px-3 py-2 text-gray-700 hover:text-cercooffro-primary"
-            >
-              {t('navbar.contact')}
-            </Link>
+            <NavLinks />
             <div className="px-3 py-2">
               <LanguageToggle 
                 language={language} 

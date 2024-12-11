@@ -1,21 +1,27 @@
-import type { Metadata } from 'next'
+import * as React from 'react';
 import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
 import './globals.css'
-import { NavBar } from '@/components/NavBar'
+
+// Explicitly import all components
+import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import { LanguageProvider } from '@/context/LanguageContext'
+import AdBlockerModal from '@/components/AdBlockerModal';
+import AnalyticsProvider from '@/components/AnalyticsProvider';
 
+// Initialize Inter font
 const inter = Inter({ 
   subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
+  variable: '--font-inter'
 })
 
+// Metadata definition
 export const metadata: Metadata = {
-  title: 'cercooffro - Student Housing in Italy',
-  description: 'Find your perfect student home in Italy',
+  title: 'CercoOffro',
+  description: 'Student Rental Aggregator',
   openGraph: {
-    title: 'cercooffro - Student Housing Platform',
+    title: 'CercoOffro - Student Housing Platform',
     description: 'Discover affordable and convenient student housing across Italy',
     images: ['/images/italian-university-campus-1.jpg']
   },
@@ -25,6 +31,7 @@ export const metadata: Metadata = {
   }
 }
 
+// Layout component
 export default function RootLayout({
   children,
 }: {
@@ -32,21 +39,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <head>
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" 
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-sans antialiased bg-white text-gray-900">
+      <body>
         <LanguageProvider>
-          <NavBar />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <NavBar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+            <AdBlockerModal />
+          </div>
         </LanguageProvider>
+        <AnalyticsProvider />
       </body>
     </html>
-  )
+  );
 }

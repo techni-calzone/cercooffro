@@ -18,6 +18,32 @@ const nextConfig = {
   },
   // Add metadata base for social sharing and image resolution
   metadataBase: new URL('https://www.cercooffro.com'),
+  
+  // Add script for Google AdSense
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com",
+          },
+        ],
+      },
+    ];
+  },
+  
+  // Add external scripts
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
 };
 
 module.exports = nextConfig;

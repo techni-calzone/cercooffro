@@ -8,11 +8,13 @@ export default function Footer() {
 
   const footerLinks = {
     it: [
+      { href: "/about", text: "Chi Siamo" },
       { href: "/privacy", text: "Politica sulla Privacy" },
       { href: "/terms", text: "Termini di Servizio" },
       { href: "/contact", text: "Contattaci" }
     ],
     en: [
+      { href: "/about", text: "About Us" },
       { href: "/privacy", text: "Privacy Policy" },
       { href: "/terms", text: "Terms of Service" },
       { href: "/contact", text: "Contact Us" }

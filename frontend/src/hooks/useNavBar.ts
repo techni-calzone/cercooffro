@@ -63,23 +63,23 @@ export const useNavBar = () => {
 
   const handleLocationSelect = useCallback((selectedLocation: string) => {
     setLocation(selectedLocation);
-    toggleLocationDropdown(false);
-  }, [toggleLocationDropdown]);
+    setIsLocationDropdownOpen(false);
+  }, []);
 
   const handleDatesSelect = useCallback((selectedDates: { startDate: Date; endDate: Date }) => {
     setDates(selectedDates);
-    toggleDatesDropdown(false);
-  }, [toggleDatesDropdown]);
+    setIsDatesDropdownOpen(false);
+  }, []);
 
   const handleGuestsSelect = useCallback((selectedGuests: { students: number; rooms: number }) => {
     setGuests(selectedGuests);
-    toggleGuestsDropdown(false);
-  }, [toggleGuestsDropdown]);
+    setIsGuestsDropdownOpen(false);
+  }, []);
 
   const handleFilterSelect = useCallback((selectedFilters: any) => {
     setFilters(selectedFilters);
-    toggleFilterDropdown(false);
-  }, [toggleFilterDropdown]);
+    setIsFilterDropdownOpen(false);
+  }, []);
 
   const handleSearch = useCallback(() => {
     // Implement search logic here
@@ -90,29 +90,29 @@ export const useNavBar = () => {
       filters 
     });
     // Close all dropdowns and search modal
-    toggleLocationDropdown(false);
-    toggleDatesDropdown(false);
-    toggleGuestsDropdown(false);
-    toggleFilterDropdown(false);
-    toggleSearchModal(false);
+    setIsLocationDropdownOpen(false);
+    setIsDatesDropdownOpen(false);
+    setIsGuestsDropdownOpen(false);
+    setIsFilterDropdownOpen(false);
+    setIsSearchModalOpen(false);
   }, [
     location, 
     dates, 
     guests, 
-    filters, 
-    toggleLocationDropdown, 
-    toggleDatesDropdown, 
-    toggleGuestsDropdown, 
-    toggleFilterDropdown, 
-    toggleSearchModal
+    filters
   ]);
 
   return {
     isLocationDropdownOpen,
+    setIsLocationDropdownOpen,
     isDatesDropdownOpen,
+    setIsDatesDropdownOpen,
     isGuestsDropdownOpen,
+    setIsGuestsDropdownOpen,
     isFilterDropdownOpen,
+    setIsFilterDropdownOpen,
     isSearchModalOpen,
+    setIsSearchModalOpen,
     location,
     dates,
     guests,

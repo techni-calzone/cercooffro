@@ -1,129 +1,140 @@
 'use client';
 
 import React, { useState, Suspense } from 'react';
-import { FaTimes, FaMapMarkerAlt, FaCalendarAlt, FaUsers } from 'react-icons/fa';
+import { 
+  FaTimes, 
+  FaMapMarkerAlt, 
+  FaCalendarAlt, 
+  FaUsers 
+} from 'react-icons/fa';
 import { useLanguage } from '../context/LanguageContext';
+import { useNavBar } from '../hooks/useNavBar';
 import LocationDropdown from './SearchDropdowns/LocationDropdown';
+import DatesDropdown from './SearchDropdowns/DatesDropdown';
+import GuestsDropdown from './SearchDropdowns/GuestsDropdown';
 
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSearch: (searchParams: any) => void;
+  onSearch: (params: any) => void;
 }
 
 const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, onSearch }) => {
   const { t } = useLanguage();
-  const [isLocationDropdownOpen, setIsLocationDropdownOpen] = useState(false);
-  const [location, setLocation] = useState('');
-  const [dates, setDates] = useState({ startDate: null, endDate: null });
-  const [guests, setGuests] = useState(1);
+  const { 
+    handleLocationSelect, 
+    handleDatesSelect,
+    isLocationDropdownOpen, 
+    setIsLocationDropdownOpen,
+    isDatesDropdownOpen,
+    setIsDatesDropdownOpen,
+    isGuestsDropdownOpen,
+    setIsGuestsDropdownOpen,
+    location,
+    dates,
+    guests
+  } = useNavBar();
 
   if (!isOpen) return null;
 
-  const handleLocationSelect = (selectedLocation: string) => {
-    setLocation(selectedLocation);
+  const handleLocationSelectWrapper = (selectedLocation: string) => {
+    handleLocationSelect(selectedLocation);
     setIsLocationDropdownOpen(false);
   };
 
+  const handleDatesSelectWrapper = (selectedDates: { startDate: Date; endDate: Date }) => {
+    handleDatesSelect(selectedDates);
+    setIsDatesDropdownOpen(false);
+  };
+
+  const handleGuestsSelectWrapper = (selectedGuests: { students: number; rooms: number }) => {
+    // Implement guest selection logic
+    setIsGuestsDropdownOpen(false);
+  };
+
+  const performSearch = () => {
+    onSearch({ location, dates, guests });
+    onClose();
+  };
+
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
-        onClick={onClose}
-      />
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+      <div className="bg-white rounded-xl w-full max-w-md mx-4 p-6 relative">
+        {/* Close Button */}
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+        >
+          <FaTimes className="w-6 h-6" />
+        </button>
 
-      {/* Modal */}
-      <div className="relative min-h-screen flex items-start justify-center p-4">
-        <div className="relative bg-white w-full max-w-lg rounded-xl shadow-xl transform transition-all mt-16">
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
-            aria-label={t('close')}
+        {/* Search Inputs */}
+        <div className="space-y-4">
+          {/* Location */}
+          <div 
+            onClick={() => setIsLocationDropdownOpen(true)}
+            className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg cursor-pointer"
           >
-            <FaTimes className="w-5 h-5" />
-          </button>
-
-          {/* Content */}
-          <div className="p-6">
-            {/* Where */}
-            <div className="mb-8 relative">
-              <div className="flex items-center gap-2 mb-3">
-                <FaMapMarkerAlt className="text-cercooffro-primary" />
-                <h3 className="text-lg font-medium">{t('where')}</h3>
-              </div>
-              <div 
-                onClick={() => setIsLocationDropdownOpen(true)}
-                className="w-full p-3 border border-gray-300 rounded-lg cursor-pointer hover:border-cercooffro-primary transition-colors"
-              >
-                <p className="text-gray-700">
-                  {location || t('searchCitiesUniversitiesOrRegions')}
-                </p>
-              </div>
-              {isLocationDropdownOpen && (
-                <div className="absolute w-full z-10 mt-2">
-                  <Suspense fallback={<div className="p-4 bg-white rounded-lg shadow-lg">{t('loading')}</div>}>
-                    <LocationDropdown 
-                      onSelect={handleLocationSelect}
-                      onClose={() => setIsLocationDropdownOpen(false)}
-                      selectedLocation={location}
-                    />
-                  </Suspense>
-                </div>
-              )}
-            </div>
-
-            {/* When */}
-            <div className="mb-8">
-              <div className="flex items-center gap-2 mb-3">
-                <FaCalendarAlt className="text-cercooffro-primary" />
-                <h3 className="text-lg font-medium">{t('when')}</h3>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <input
-                  type="date"
-                  className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cercooffro-primary focus:border-transparent"
-                  placeholder={t('checkIn')}
-                  onChange={(e) => setDates({ ...dates, startDate: new Date(e.target.value) })}
-                />
-                <input
-                  type="date"
-                  className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cercooffro-primary focus:border-transparent"
-                  placeholder={t('checkOut')}
-                  onChange={(e) => setDates({ ...dates, endDate: new Date(e.target.value) })}
-                />
-              </div>
-            </div>
-
-            {/* Who */}
-            <div className="mb-8">
-              <div className="flex items-center gap-2 mb-3">
-                <FaUsers className="text-cercooffro-primary" />
-                <h3 className="text-lg font-medium">{t('who')}</h3>
-              </div>
-              <input
-                type="number"
-                min="1"
-                value={guests}
-                onChange={(e) => setGuests(parseInt(e.target.value))}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cercooffro-primary focus:border-transparent"
-                placeholder={t('guestsHint')}
-              />
-            </div>
-
-            {/* Search button */}
-            <button
-              onClick={() => {
-                onSearch({ location, dates, guests });
-                onClose();
-              }}
-              className="w-full bg-cercooffro-primary text-white py-3 rounded-lg hover:bg-cercooffro-primary/90 transition-colors"
-            >
-              {t('search')}
-            </button>
+            <FaMapMarkerAlt className="text-cercooffro-primary" />
+            <span>
+              {location || t('where')}
+            </span>
           </div>
+
+          {/* Dates */}
+          <div 
+            onClick={() => setIsDatesDropdownOpen(true)}
+            className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg cursor-pointer"
+          >
+            <FaCalendarAlt className="text-cercooffro-primary" />
+            <span>
+              {(dates?.startDate && dates?.endDate) 
+                ? `${dates.startDate.toLocaleDateString()} - ${dates.endDate.toLocaleDateString()}` 
+                : t('when')}
+            </span>
+          </div>
+
+          {/* Guests */}
+          <div 
+            onClick={() => setIsGuestsDropdownOpen(true)}
+            className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg cursor-pointer"
+          >
+            <FaUsers className="text-cercooffro-primary" />
+            <span>
+              {typeof guests === 'number' && guests > 0 
+                ? `${guests} ${t('students')}` 
+                : t('who')}
+            </span>
+          </div>
+
+          {/* Search Button */}
+          <button 
+            onClick={performSearch}
+            className="w-full bg-cercooffro-primary text-white py-3 rounded-full hover:bg-opacity-90 transition-colors"
+          >
+            {t('search')}
+          </button>
         </div>
+
+        {/* Dropdowns */}
+        {isLocationDropdownOpen && (
+          <LocationDropdown 
+            onClose={() => setIsLocationDropdownOpen(false)}
+            onSelect={handleLocationSelectWrapper}
+          />
+        )}
+        {isDatesDropdownOpen && (
+          <DatesDropdown 
+            onClose={() => setIsDatesDropdownOpen(false)}
+            onSelect={handleDatesSelectWrapper}
+          />
+        )}
+        {isGuestsDropdownOpen && (
+          <GuestsDropdown 
+            onClose={() => setIsGuestsDropdownOpen(false)}
+            onSelect={handleGuestsSelectWrapper}
+          />
+        )}
       </div>
     </div>
   );

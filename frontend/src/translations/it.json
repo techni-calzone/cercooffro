@@ -2,94 +2,454 @@
   "home": "Home",
   "listings": "Annunci",
   "about": "Chi Siamo",
+  "contact": "Contatti",
+  "navbar": {
+    "toggleLanguage": "Cambia lingua",
+    "about": "Chi Siamo",
+    "contact": "Contatti",
+    "addOffer": "Aggiungi Offerta",
+    "addOfferDescription": "Elenca la tua proprietà o fatti inserire nella Directory Cerco",
+    "searchers": "Coinquilini",
+    "feedback": "Feedback"
+  },
+  "secondaryNavbar": {
+    "listings": "Annunci",
+    "searchers": "Cercatori",
+    "about": "Chi siamo",
+    "contact": "Contattaci",
+    "feedback": "Feedback"
+  },
   "addListing": "Aggiungi Annuncio",
-  "free": "Gratis",
+  "communityGuardianTitle": "Sii un Guardiano della Comunità",
+  "communityGuardianDescription": "Aiuta a mantenere la comunità di CercoOffro sicura segnalando annunci sospetti.",
+  "openSourceTitle": "Open Source e Developer Friendly",
+  "openSourceDescription": "Siamo un progetto open-source che accoglie gli sviluppatori per contribuire e migliorare la nostra piattaforma!",
+  "contributeOnGitHub": "Contribuisci su GitHub",
+  "supportPeersTitle": "Supporta i Tuoi Colleghi",
+  "supportPeersDescription": "Le tue segnalazioni aiutano a proteggere gli altri studenti da potenziali truffe e annunci ingannevoli.",
+  "communityDrivenTitle": "Guidato dalla Comunità",
+  "communityDrivenDescription": "Insieme, creiamo un mercato degli affitti affidabile e trasparente.",
+  "makeADifferenceTitle": "Aiuta a Mantenere la Piattaforma",
+  "makeADifferenceDescription": "La tua donazione ci aiuta a mantenere i server, migliorare le funzionalità e mantenere questa piattaforma gratuita per gli studenti.",
+  "buyMeACoffee": "Supporta la Nostra Missione",
+  "free": "Gratuito",
   "login": "Accedi",
+  "searchCitiesUniversitiesOrRegions": "Cerca città, università o regioni",
   "where": "Dove",
   "when": "Quando",
   "who": "Chi",
-  "students": "Studenti",
-  "rooms": "Camere",
-  "guestsHint": "Numero di studenti",
-  "roomsHint": "Numero di camere",
-  "checkIn": "Check-in",
-  "checkOut": "Check-out",
+  "search": "Cerca",
+  "selectDateRange": "Seleziona le date",
+  "findYourPerfectStudentHome": "Trova la Tua Casa Studentesca Perfetta",
   "addDates": "Aggiungi date",
   "addGuests": "Aggiungi ospiti",
-  "searchCitiesUniversitiesOrRegions": "Cerca città, università o regioni",
   "selectYourDates": "Seleziona le tue date",
-  "selectDateRange": "Seleziona date",
-  "selectDates": "Seleziona Date",
-  "selectCheckIn": "Seleziona Data di Check-in",
-  "selectCheckOut": "Seleziona Data di Check-out",
   "adults": "Adulti",
   "children": "Bambini",
   "age13Plus": "Età 13+",
   "ages2To12": "Età 2-12",
-  "search": "Cerca",
-  "searchPlaceholder": "Cerca città, università o regioni",
   "availableListings": "Annunci Disponibili",
-  "findYourPerfectStudentHome": "Trova la Tua Casa Studentesca Perfetta",
   "affordableHousing": "Alloggi Economici",
-  "findBudgetFriendlyStudentAccommodationsNearTopUniversities": "Trova alloggi per studenti convenienti vicino alle migliori università",
+  "findBudgetFriendlyStudentAccommodationsNearTopUniversities": "Trova alloggi studenteschi economici vicino alle migliori università",
   "verifiedListings": "Annunci Verificati",
-  "everyListingIsCarefullyVerifiedForSafetyAndQuality": "Ogni annuncio è accuratamente verificato per sicurezza e qualità",
+  "verifiedListingsDescription": "I nostri moderatori studenti esaminano e filtrano meticolosamente gli annunci, garantendo solo opzioni abitative genuine e di alta qualità.",
   "localSupport": "Supporto Locale",
   "24/7SupportToHelpYouFindYourPerfectStudentHome": "Supporto 24/7 per aiutarti a trovare la tua casa studentesca perfetta",
+  "searchPlaceholder": "Cerca città, università o regioni",
+  "students": "Studenti",
+  "rooms": "Stanze",
+  "guestsHint": "Numero di studenti",
+  "roomsHint": "Numero di stanze",
+  "checkIn": "Check-in",
+  "checkOut": "Check-out",
   "dates": "Date",
   "flexibleDates": "Date Flessibili",
   "flexibleDateOptions": "Sono flessibile con",
-  "weekend": "Fine settimana",
-  "week": "Settimana", 
+  "weekend": "Weekend",
+  "week": "Settimana",
   "month": "Mese",
   "nights": "notti",
   "apply": "Applica",
   "cancel": "Annulla",
   "searchRentals": "Cerca Affitti",
+  "selectDates": "Seleziona Date",
+  "selectCheckIn": "Seleziona Data Check-in",
+  "selectCheckOut": "Seleziona Data Check-out",
   "howManyStudents": "Quanti studenti?",
   "confirm": "Conferma",
-  "communityPowered": "Gestito dalla Comunità",
+  "communityPowered": "Gestito dalla Community",
   "communityPoweredDescription": "Costruito da studenti, per studenti. La nostra piattaforma prospera sulla partecipazione attiva della community e su approfondimenti reali.",
-  "verifiedListingsDescription": "I nostri dedicati moderatori studenti esaminano e filtrano accuratamente gli annunci, garantendo solo opzioni abitative genuine e di alta qualità.",
   "openSource": "Open Source",
   "openSourceDescription": "Sviluppato come un progetto open-source dagli studenti, migliorato continuamente dai contributi della community.",
-  "communityGuardianTitle": "Diventa un Guardiano della Comunità",
-  "communityGuardianDescription": "Aiutaci a mantenere sicura la nostra comunità di affitti studenteschi segnalando annunci sospetti.",
-  "openSourceTitle": "Open Source & Amico degli Sviluppatori",
-  "openSourceDescription": "Siamo un progetto open-source che accoglie sviluppatori per migliorare la nostra piattaforma!",
-  "contributeOnGitHub": "Contribuisci su GitHub",
-  "supportPeersTitle": "Supporta i Tuoi Colleghi",
-  "supportPeersDescription": "Le tue segnalazioni aiutano a proteggere gli altri studenti da potenziali truffe e annunci ingannevoli.",
-  "communityDrivenTitle": "Guidato dalla Comunità",
-  "communityDrivenDescription": "Insieme, creiamo un mercato degli affitti trasparente e affidabile.",
-  "makeADifferenceTitle": "Aiutaci a Mantenere Attiva la Piattaforma",
-  "makeADifferenceDescription": "La tua donazione ci aiuta a mantenere i server, migliorare le funzionalità e mantenere questa piattaforma guidata dalla comunità gratuita per gli studenti.",
-  "buyMeACoffee": "Sostieni la Nostra Missione ",
   "filters": {
+    "title": "Filtri",
     "listingType": "Tipo di Annuncio",
     "agency": "Agenzia",
     "person": "Proprietario Privato",
     "priceRange": "Fascia di Prezzo",
-    "roomType": "Tipo di Camera",
+    "min": "Prezzo Min",
+    "max": "Prezzo Max",
+    "minPrice": "Min €",
+    "maxPrice": "Max €",
+    "roomType": "Tipo di Stanza",
     "amenities": "Servizi",
-    "universityProximity": "Vicinanza all'Università",
+    "universityProximity": "Distanza dall'Università",
     "apply": "Applica Filtri"
   },
-  "searchModal": {
-    "whereAreYouGoing": "Dove stai andando?",
-    "whenIsYourCheckIn": "Quando è il tuo check-in?",
-    "selectCheckInDate": "Seleziona data di check-in",
-    "selectCheckOutDate": "Seleziona data di check-out",
-    "howManyStudents": "Quanti studenti?",
-    "confirmSearch": "Conferma Ricerca",
-    "searchRentals": "Cerca Affitti"
+  "aboutTitle": "Chi è CercoOffro",
+  "aboutDescription": "Scopri di più su CercoOffro e la nostra missione",
+  "ourMission": "La Nostra Missione",
+  "missionText": "CercoOffro è dedicato a semplificare il processo di ricerca di alloggi per gli studenti in tutta Italia. Aggreghiamo annunci di affitto da più fonti per fornire una piattaforma completa dove gli studenti possono facilmente trovare il loro alloggio ideale.",
+  "whatWeOffer": "Cosa Offriamo",
+  "comprehensiveListings": "Annunci completi da più fonti",
+  "easyToUseSearch": "Opzioni di ricerca e filtro facili da usare",
+  "detailedInfo": "Informazioni dettagliate sugli immobili e foto",
+  "multiLanguageSupport": "Supporto multilingua",
+  "directContact": "Contatto diretto con proprietari/gestori",
+  "contactTitle": "Contattaci",
+  "contactDescription": "Siamo qui per aiutarti! Contatta il nostro team per domande, supporto o feedback.",
+  "getInTouch": "Mettiti in Contatto",
+  "contactMethods": "Metodi di Contatto",
+  "email": "Email",
+  "phone": "Telefono",
+  "address": "Indirizzo",
+  "addressDetails": "Milano, Italia",
+  "supportHours": "Orari di Supporto",
+  "supportAvailability": "Il nostro team è disponibile dal lunedì al venerdì, dalle 9:00 alle 18:00 (CET)",
+  "followUs": "Seguici",
+  "privacyTitle": "Informativa sulla Privacy",
+  "privacyDescription": "La nostra informativa sulla privacy spiega come gestiamo i tuoi dati in conformità con le normative UE",
+  "introduction": "Introduzione",
+  "privacyIntroText": "Questa Informativa sulla Privacy spiega come CercoOffro raccoglie, utilizza e protegge i tuoi dati personali in conformità con il Regolamento Generale sulla Protezione dei Dati dell'UE (GDPR) e altre leggi applicabili sulla protezione dei dati.",
+  "dataController": "Titolare del Trattamento",
+  "personalData": "Dati Personali che Raccogliamo",
+  "contactInfo": "Informazioni di contatto (nome, email, telefono)",
+  "accountCredentials": "Credenziali dell'account",
+  "searchPreferences": "Preferenze di ricerca e cronologia",
+  "deviceInfo": "Informazioni sul dispositivo e browser",
+  "locationData": "Indirizzo IP e dati sulla posizione",
+  "communicationHistory": "Cronologia delle comunicazioni",
+  "legalBasis": "Base Giuridica del Trattamento",
+  "consent": "Il tuo consenso",
+  "contractPerformance": "Esecuzione del contratto",
+  "legalObligations": "Obblighi legali",
+  "legitimateInterests": "Interessi legittimi",
+  "yourRights": "I Tuoi Diritti",
+  "accessData": "Accedere ai tuoi dati personali",
+  "rectifyData": "Rettificare dati inaccurati",
+  "eraseData": "Richiedere la cancellazione dei tuoi dati",
+  "restrictProcessing": "Limitare od opporti al trattamento",
+  "dataPortability": "Portabilità dei dati",
+  "withdrawConsent": "Revocare il consenso",
+  "termsTitle": "Termini di Servizio",
+  "termsDescription": "Termini e condizioni per l'utilizzo della piattaforma CercoOffro",
+  "acceptanceOfTerms": "Accettazione dei Termini",
+  "termsAcceptanceText": "Accedendo o utilizzando CercoOffro, accetti di essere vincolato da questi Termini di Servizio e tutte le leggi e i regolamenti applicabili. Se non accetti questi termini, non puoi utilizzare questo servizio.",
+  "serviceDescription": "Descrizione del Servizio",
+  "serviceDescriptionText": "CercoOffro è una piattaforma che aggrega annunci di affitto per studenti. Non possediamo, controlliamo o gestiamo nessuna delle proprietà elencate sulla nostra piattaforma. Agiamo come intermediari tra gli inserzionisti e i potenziali inquilini.",
+  "userRights": "Diritti e Obblighi dell'Utente",
+  "accessRights": "Diritto di accedere e utilizzare il servizio in conformità con questi termini",
+  "useRights": "Obbligo di fornire informazioni accurate e complete",
+  "complianceRights": "Utilizzare il servizio in conformità con tutte le leggi applicabili",
+  "securityRights": "Mantenere la sicurezza del proprio account",
+  "intellectualProperty": "Diritti di Proprietà Intellettuale",
+  "intellectualPropertyText": "Tutti i contenuti, le funzionalità e le funzionalità del nostro servizio sono di proprietà di CercoOffro e sono protetti dalle leggi internazionali sul copyright, sui marchi e altre leggi sulla proprietà intellettuale.",
+  "dataProtection": "Protezione dei Dati e Privacy",
+  "dataProtectionText": "Il trattamento dei tuoi dati personali è regolato dalla nostra Informativa sulla Privacy e rispetta il GDPR e altre leggi applicabili sulla protezione dei dati. Utilizzando il nostro servizio, acconsenti a tale trattamento e garantisci che tutti i dati forniti sono accurati.",
+  "propertyListings": "Annunci Immobiliari",
+  "propertyListingsText": "Sebbene ci impegniamo a garantire l'accuratezza degli annunci sulla nostra piattaforma, non possiamo garantire l'accuratezza, la completezza o l'affidabilità di qualsiasi informazione negli annunci. Gli utenti devono verificare tutte le informazioni direttamente con i proprietari o i gestori degli immobili.",
+  "liability": "Limitazione di Responsabilità",
+  "liabilityText": "Nella misura massima consentita dalla legge applicabile, CercoOffro non sarà responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, o per qualsiasi perdita di profitti o ricavi.",
+  "disputes": "Risoluzione delle Controversie",
+  "disputesText": "Qualsiasi controversia derivante dall'utilizzo del nostro servizio sarà regolata dalle leggi dell'Unione Europea e del tuo paese di residenza. Accetti di sottoporti alla giurisdizione dei tribunali del tuo paese di residenza.",
+  "changes": "Modifiche ai Termini",
+  "changesText": "Ci riserviamo il diritto di modificare questi termini in qualsiasi momento. Notificheremo agli utenti eventuali modifiche sostanziali via email o attraverso la piattaforma. L'uso continuato del servizio dopo tali modifiche costituisce l'accettazione dei termini aggiornati.",
+  "localization": {
+    "language": "Lingua",
+    "english": "Inglese",
+    "italian": "Italiano"
   },
-  "navbar": {
-    "toggleLanguage": "Cambia lingua",
-    "toggleMenu": "Menu",
-    "toggleSearch": "Cerca",
-    "search": "Cerca",
-    "contact": "Contatti",
-    "about": "Chi Siamo"
+  "searchersPage": {
+    "title": "Trova Potenziali Coinquilini",
+    "subtitle": "Connettiti con studenti in cerca di alloggio",
+    "addSearcherProfile": "Crea Profilo Cercatore",
+    "telegramUsername": "Username Telegram",
+    "requirements": {
+      "title": "Requisiti Alloggio",
+      "budget": "Budget Mensile",
+      "location": "Posizione Preferita",
+      "moveInDate": "Data Desiderata di Trasloco",
+      "duration": "Durata Soggiorno",
+      "groupSize": "Numero di Persone",
+      "tags": "Preferenze Aggiuntive"
+    },
+    "availableTags": [
+      "Disponibili a Subaffitto",
+      "Amici degli Animali",
+      "Non Fumatori",
+      "Studenti Internazionali Benvenuti",
+      "Ambiente LGBTQ+ Friendly",
+      "Ambiente Tranquillo",
+      "Data di Trasloco Flessibile"
+    ],
+    "studyLevelOptions": [
+      "Triennale",
+      "Magistrale", 
+      "Dottorato",
+      "Post-Dottorato"
+    ],
+    "studyFieldOptions": [
+      "Ingegneria",
+      "Informatica",
+      "Economia", 
+      "Medicina",
+      "Giurisprudenza",
+      "Arti",
+      "Scienze Umane",
+      "Scienze Sociali", 
+      "Scienze Naturali",
+      "Altro"
+    ],
+    "financialStatusOptions": [
+      "Studente",
+      "Studente Lavoratore", 
+      "Borsa di Studio",
+      "Altro"
+    ],
+    "smokingPreferenceOptions": [
+      "Non Fumatore",
+      "Fumatore", 
+      "Occasionale"
+    ],
+    "alcoholPreferenceOptions": [
+      "Astemio",
+      "Bevitore", 
+      "Occasionale"
+    ],
+    "dietaryRestrictionsOptions": [
+      "Vegetariano",
+      "Vegano",
+      "Senza Glutine",
+      "Senza Lattosio",
+      "Kosher",
+      "Halal"
+    ],
+    "form": {
+      "submit": "Crea Profilo",
+      "cancel": "Annulla"
+    },
+    "results": "Risultati",
+    "noResults": "Nessun coinquilino trovato che corrisponda ai tuoi criteri",
+    "moveIn": "Data di Trasloco",
+    "contactRoommate": "Contatta su Telegram",
+    "people": "Persone",
+    "personalInfo": {
+      "nationality": "Nazionalità",
+      "sex": "Sesso",
+      "monthlyIncome": "Reddito Mensile"
+    },
+    "sexOptions": [
+      "Maschio",
+      "Femmina", 
+      "Altro"
+    ]
+  },
+  "addOfferPage": {
+    "title": "Pubblica il Tuo Immobile",
+    "subtitle": "Condividi il tuo spazio con gli studenti",
+    "propertyDetails": "Dettagli dell'Immobile",
+    "contactInformation": "Informazioni di Contatto",
+    "rentalInformation": "Informazioni sull'Affitto",
+    "propertyType": {
+      "label": "Tipo di Immobile",
+      "options": [
+        "Appartamento",
+        "Monolocale",
+        "Camera",
+        "Camera Condivisa",
+        "Casa",
+        "Altro"
+      ]
+    },
+    "bedrooms": "Numero di Camere da Letto",
+    "bathrooms": "Numero di Bagni",
+    "squareMeters": "Metri Quadrati",
+    "monthlyRent": "Affitto Mensile",
+    "utilities": "Utenze Incluse",
+    "amenities": {
+      "label": "Servizi",
+      "options": [
+        "WiFi",
+        "Riscaldamento",
+        "Aria Condizionata",
+        "Lavatrice",
+        "Cucina",
+        "Balcone",
+        "Parcheggio",
+        "Ascensore"
+      ]
+    },
+    "submitListing": "Pubblica Annuncio"
+  },
+  "feedbackPage": {
+    "title": "Condividi il Tuo Feedback",
+    "subtitle": "Aiutaci a migliorare CercoOffro",
+    "experienceType": {
+      "label": "Su cosa verte il tuo feedback?",
+      "options": [
+        "Esperienza del Sito Web",
+        "Annuncio di Affitto",
+        "Abbinamento Coinquilini",
+        "Supporto Clienti",
+        "Altro"
+      ]
+    },
+    "satisfactionLevel": {
+      "label": "Quanto sei soddisfatto?",
+      "options": [
+        "Molto Insoddisfatto",
+        "Insoddisfatto",
+        "Neutrale",
+        "Soddisfatto",
+        "Molto Soddisfatto"
+      ]
+    },
+    "feedbackDetails": "Dettagli del Feedback",
+    "contactPermission": "Possiamo contattarti per ulteriori dettagli?",
+    "submitFeedback": "Invia Feedback",
+    "thankYouMessage": "Grazie per aiutarci a migliorare!"
+  },
+  "searcherProfileForm": {
+    "title": "Crea il Tuo Profilo Cercatore",
+    "subtitle": "Condividi le tue preferenze abitative e connettiti con potenziali coinquilini",
+    "personalInformation": {
+      "title": "Informazioni Personali",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "nationality": "Nazionalità",
+      "sex": {
+        "label": "Sesso",
+        "options": [
+          "Maschio",
+          "Femmina", 
+          "Altro"
+        ]
+      },
+      "birthDate": "Data di Nascita",
+      "telegramUsername": "Username Telegram"
+    },
+    "academicInformation": {
+      "title": "Informazioni Accademiche",
+      "studyLevel": {
+        "label": "Livello di Studio",
+        "options": [
+          "Laurea Triennale",
+          "Laurea Magistrale", 
+          "Dottorato",
+          "Post-Dottorato"
+        ]
+      },
+      "studyField": {
+        "label": "Campo di Studio",
+        "options": [
+          "Ingegneria",
+          "Informatica",
+          "Economia", 
+          "Medicina",
+          "Giurisprudenza",
+          "Arti",
+          "Scienze Umane",
+          "Scienze Sociali", 
+          "Scienze Naturali",
+          "Altro"
+        ]
+      },
+      "university": "Università"
+    },
+    "financialInformation": {
+      "title": "Informazioni Finanziarie",
+      "financialStatus": {
+        "label": "Stato Finanziario",
+        "options": [
+          "Studente",
+          "Studente Lavoratore", 
+          "Borsa di Studio",
+          "Altro"
+        ]
+      },
+      "monthlyIncome": "Reddito Mensile",
+      "currency": "€"
+    },
+    "lifestylePreferences": {
+      "title": "Preferenze di Stile di Vita",
+      "smokingPreference": {
+        "label": "Preferenza Fumo",
+        "options": [
+          "Non Fumatore",
+          "Fumatore", 
+          "Occasionale"
+        ]
+      },
+      "alcoholPreference": {
+        "label": "Preferenza Alcol",
+        "options": [
+          "Non Bevitore",
+          "Bevitore", 
+          "Occasionale"
+        ]
+      },
+      "dietaryRestrictions": {
+        "label": "Restrizioni Alimentari",
+        "options": [
+          "Nessuna",
+          "Vegetariano",
+          "Vegano",
+          "Halal",
+          "Kosher",
+          "Senza Glutine",
+          "Senza Lattosio"
+        ]
+      }
+    },
+    "housingPreferences": {
+      "title": "Preferenze Abitative",
+      "budget": "Budget Mensile",
+      "preferredLocation": "Posizione Preferita",
+      "moveInDate": "Data di Trasloco Desiderata",
+      "stayDuration": {
+        "label": "Durata del Soggiorno",
+        "options": [
+          "Meno di 3 mesi",
+          "3-6 mesi",
+          "6-12 mesi",
+          "1-2 anni",
+          "Più di 2 anni"
+        ]
+      },
+      "groupSize": "Numero di Persone",
+      "additionalTags": {
+        "label": "Preferenze Aggiuntive",
+        "options": [
+          "Disponibile a Subaffitto",
+          "Animali Ammessi",
+          "Non Fumatori",
+          "Studenti Internazionali Benvenuti",
+          "LGBTQ+ Friendly",
+          "Ambiente Tranquillo",
+          "Data di Trasloco Flessibile"
+        ]
+      }
+    },
+    "submit": "Crea Profilo",
+    "cancel": "Annulla"
+  },
+  "feedbackModal": {
+    "title": "Come Possiamo Aiutarti?",
+    "subtitle": "Scegli come vorresti fornire feedback",
+    "generalFeedback": "Feedback Generale",
+    "generalFeedbackDescription": "Condividi i tuoi pensieri, suggerimenti ed esperienze",
+    "reportBug": "Segnala un Bug",
+    "reportBugDescription": "Aiutaci a migliorare segnalando problemi tecnici",
+    "cancel": "Annulla"
   }
 }
