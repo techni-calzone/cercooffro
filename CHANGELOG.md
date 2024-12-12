@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
 - Updated Docker configuration to use MongoDB Atlas
 - Improved login page layout and user experience
 - Updated CORS configuration to include production domain
+- Added missing environment variables from `backend/.env.example` to `docker-compose.yaml` for backend service configuration.
 
 ### Removed
 - Removed duplicate translations folder (`src/translations`)
