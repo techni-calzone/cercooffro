@@ -30,7 +30,7 @@ services:
       - API_V1_PREFIX="/api/v1"
       - MAX_REQUESTS_PER_MINUTE=${MAX_REQUESTS_PER_MINUTE}
       - LOG_LEVEL=${LOG_LEVEL}
-      - CORS_ORIGINS=http://localhost:3000,http://frontend:3000,https://cercooffro.it.com
+      - CORS_ORIGINS="http://localhost:3000,http://frontend:3000,https://cercooffro.it.com"
     ports:
       - "8005:8000"
     networks:
