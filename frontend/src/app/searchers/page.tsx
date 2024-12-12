@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SearcherProfileForm } from '@/components/SearcherProfileForm';
-import { SearcherProfileList } from '@/components/SearcherProfileList';
+import { SearcherProfileForm } from '@/components/features/search/SearcherProfileForm';
+import { SearcherProfileList } from '@/components/features/search/SearcherProfileList';
 import { useLanguage } from '@/context/LanguageContext';
 import { FaUserFriends, FaPlus } from 'react-icons/fa';
-import SimpleNavbar from '@/components/SimpleNavbar';
+import SimpleNavbar from '@/components/layout/SimpleNavbar';
 
 export default function SearchersPage() {
   const { t } = useLanguage();

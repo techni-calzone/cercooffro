@@ -17,7 +17,7 @@ const nextConfig = {
     ],
   },
   // Add metadata base for social sharing and image resolution
-  metadataBase: new URL('https://www.cercooffro.it/'),
+  // metadataBase: new URL('https://www.cercooffro.it/'),
 
   // Add script for Google AdSense and Telegram
   async headers() {
@@ -27,7 +27,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://telegram.org",
+            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://telegram.org https://ep2.adtrafficquality.google;",
           },
         ],
       },

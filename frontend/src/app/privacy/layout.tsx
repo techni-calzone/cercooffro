@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import SimpleNavbar from '@/components/SimpleNavbar';
+import SimpleNavbar from '@/components/layout/SimpleNavbar';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - CercoOffro',

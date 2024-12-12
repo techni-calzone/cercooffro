@@ -14,7 +14,11 @@
         "toggleSearch": "Toggle search",
         "toggleMenu": "Toggle menu",
         "search": "Search",
-        "login": "Login"
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout",
+        "profile": "My Profile",
+        "myListings": "My Listings"
     },
     "secondaryNavbar": {
         "listings": "Listings",
@@ -355,6 +359,99 @@
         "sign_in": "Sign in to your account",
         "use_telegram": "Use your Telegram account to continue",
         "download_button": "Download Telegram and sign up"
+    },
+    "addListing": {
+      "title": "Add New Listing",
+      "subtitle": "List your property for students",
+      "form": {
+        "title": "Title",
+        "titlePlaceholder": "e.g., Cozy Studio Near University",
+        "description": "Description",
+        "descriptionPlaceholder": "Describe your property, including amenities and house rules",
+        "price": "Monthly Rent (€)",
+        "pricePlaceholder": "e.g., 500",
+        "location": "Location",
+        "locationPlaceholder": "Enter the address",
+        "propertyType": "Property Type",
+        "propertyTypes": {
+          "studio": "Studio",
+          "apartment": "Apartment",
+          "room": "Private Room",
+          "shared": "Shared Room"
+        },
+        "bedrooms": "Bedrooms",
+        "bathrooms": "Bathrooms",
+        "area": "Area (m²)",
+        "areaPlaceholder": "e.g., 50",
+        "amenities": "Amenities",
+        "amenitiesList": {
+          "wifi": "WiFi",
+          "heating": "Heating",
+          "ac": "Air Conditioning",
+          "washing": "Washing Machine",
+          "parking": "Parking",
+          "elevator": "Elevator",
+          "furnished": "Furnished"
+        },
+        "images": {
+          "title": "Property Images",
+          "subtitle": "Upload up to 10 images of your property",
+          "dragDrop": "Drag and drop images here, or click to select",
+          "maxSize": "Maximum file size: 5MB",
+          "formats": "Supported formats: JPG, PNG"
+        },
+        "availability": {
+          "title": "Availability",
+          "startDate": "Available From",
+          "endDate": "Available Until (Optional)",
+          "immediate": "Available Immediately"
+        },
+        "submit": "Post Listing",
+        "draft": "Save as Draft"
+      },
+      "validation": {
+        "required": "This field is required",
+        "minPrice": "Price must be at least €100",
+        "maxPrice": "Price cannot exceed €5000",
+        "minImages": "Please upload at least one image",
+        "maxImages": "Maximum 10 images allowed",
+        "imageSize": "Image size must be less than 5MB",
+        "imageFormat": "Invalid image format. Use JPG or PNG"
+      },
+      "success": "Listing created successfully!",
+      "error": "Error creating listing. Please try again."
+    },
+    "myListings": {
+        "title": "My Listings",
+        "addNew": "Add New Listing",
+        "createFirst": "Create Your First Listing",
+        "noListings": "You haven't created any listings yet",
+        "confirmDelete": "Are you sure you want to delete this listing?",
+        "success": {
+          "statusUpdate": "Listing status updated successfully",
+          "delete": "Listing deleted successfully"
+        },
+        "error": {
+          "fetch": "Failed to fetch your listings",
+          "statusUpdate": "Failed to update listing status",
+          "delete": "Failed to delete listing"
+        }
+    },
+    "profile": {
+        "title": "My Profile",
+        "personalInfo": "Personal Information",
+        "email": "Email",
+        "name": "Name",
+        "preferences": "Search Preferences",
+        "maxPrice": "Maximum Price",
+        "preferredLocations": "Preferred Locations",
+        "savedSearches": "Saved Searches",
+        "notSet": "Not set",
+        "noSavedSearches": "No saved searches yet",
+        "error": {
+          "fetch": "Failed to load profile",
+          "notFound": "Profile Not Found",
+          "tryAgain": "Please try again later"
+        }
     }
-
 }

@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import './globals.css'
-import RootLayoutClient from '@/components/RootLayoutClient';
+import RootLayoutClient from '@/components/layout/RootLayoutClient';
 import { AuthProvider } from '@/context/AuthContext';
+import Head from 'next/head'; // Import Head component
 
 // Initialize Inter font
 const inter = Inter({ 
@@ -34,6 +35,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      <Head>
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7508445426374362"
+          crossOrigin="anonymous"
+        ></script>
+      </Head>
       <body>
         <AuthProvider>
           <RootLayoutClient>

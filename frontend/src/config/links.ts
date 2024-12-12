@@ -1,4 +1,24 @@
-export const EXTERNAL_LINKS = {
+type SupportedLanguages = 'en' | 'it';
+
+interface LocalizedLinks {
+  en: string;
+  it: string;
+}
+
+interface ExternalLinks {
+  FEEDBACK: {
+    GENERAL_FEEDBACK: LocalizedLinks;
+    REPORT_BUG: {
+      DEFAULT: string;
+    };
+  };
+  SOCIAL_MEDIA: {
+    GITHUB: string;
+    TELEGRAM: string;
+  };
+}
+
+export const EXTERNAL_LINKS: ExternalLinks = {
   FEEDBACK: {
     GENERAL_FEEDBACK: {
       en: "https://forms.gle/aR82pJpHYY71joZ96",
@@ -13,3 +33,5 @@ export const EXTERNAL_LINKS = {
     TELEGRAM: "https://t.me/cercooffro"
   }
 };
+
+export type { SupportedLanguages };

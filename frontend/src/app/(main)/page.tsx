@@ -17,6 +17,12 @@ import {
 } from 'react-icons/fa';
 import { useLanguage } from '@/context/LanguageContext';
 import Script from 'next/script';
+import { ClientLayout, Footer, NavBar } from '@/components/layout';
+import { HeroSection, BackgroundSlideshow, CommunityBanner } from '@/components/features';
+import { AdBanner, AdBlockerModal, GoogleAd } from '@/components/features/ads/index';
+import { TelegramLogin } from '@/components/features/auth';
+import { SearcherCard } from '@/components/features/search';
+import { FeedbackModal } from '@/components/features/feedback/index';
 
 // Import Swiper components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -86,21 +92,33 @@ const HomePage = () => {
     }
   ]);
 
-  const valuePropositions = t.value_propositions || []; // Fallback to an empty array
-  const [currentValueProposition, setCurrentValueProposition] = useState(valuePropositions[0] || ""); // Fallback to an empty string
-  const [index, setIndex] = useState(0);
+  const valuePropositions: string[] = t('home.value_propositions') || [];
+  const [currentProposition, setCurrentProposition] = useState(0);
+  const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
-    if (valuePropositions.length > 0) {
-      const interval = setInterval(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % valuePropositions.length);
-        setCurrentValueProposition(valuePropositions[index]);
-      }, 3000); // Change value proposition every 3 seconds
+    if (!valuePropositions.length) return;
+    
+      let currentIndex = 0;
+  const currentText = valuePropositions[currentProposition];
 
-      return () => clearInterval(interval);
+  const typingInterval = setInterval(() => {
+    if (currentIndex <= currentText.length) {
+      setDisplayText(currentText.slice(0, currentIndex)); // Corrected slicing
+      currentIndex++;
+    } else {
+      clearInterval(typingInterval);
+      // Wait for 2 seconds before moving to the next proposition
+      setTimeout(() => {
+        setCurrentProposition((prev) => (prev + 1) % valuePropositions.length);
+      }, 2000);
     }
-  }, [index, valuePropositions]);
+  }, 50); // Adjust typing speed here (lower = faster)
 
+  return () => {
+    clearInterval(typingInterval);
+  };
+}, [currentProposition, valuePropositions]);
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Value Proposition */}
@@ -111,8 +129,9 @@ const HomePage = () => {
             <h1 className="text-4xl md:text-5xl py-12 font-bold mb-6">
               {t('home.heroTitle')}
             </h1>
-            <p className="text-xl mb-8 text-white/90">
-              {currentValueProposition}
+            <p className="text-xl mb-8 text-white/90 min-h-[2em] flex items-center justify-center">
+              {displayText}
+              <span className="animate-blink ml-0.5">|</span>
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/listings/new" className="bg-white text-cercooffro-primary px-8 py-4 rounded-full font-bold hover:bg-opacity-90 transition-colors">

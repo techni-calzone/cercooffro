@@ -46,3 +46,12 @@ h1, h2, h3, h4, h5, h6 {
 .react-datepicker__day:hover {
   @apply bg-cercooffro-primary/20;
 }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}

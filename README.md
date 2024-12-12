@@ -1,4 +1,4 @@
-# 🏠 CercoOffro - Student Rental Aggregator
+# 🏠 CercoOffro - Student Rental Finder
 
 An AI-powered rental aggregation platform designed specifically for students in Italy, helping them find their perfect accommodation with ease and security.
 
@@ -13,7 +13,11 @@ An AI-powered rental aggregation platform designed specifically for students in 
 - 🏫 University-focused listings
 - 🤝 Student community features
 
+ 
+
 ## 🛠 Tech Stack
+
+ 
 
 ### Frontend
 - Next.js 13+

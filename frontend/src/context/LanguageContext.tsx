@@ -16,10 +16,15 @@ const translations: Translations = {
 };
 
 // Create context
+interface TranslationOptions {
+  returnObjects?: boolean;
+  [key: string]: any;
+}
+
 interface LanguageContextType {
   language: string;
   setLanguage: (lang: string) => void;
-  t: (key: string) => string;
+  t: (key: string, options?: TranslationOptions) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
@@ -51,7 +56,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   // Translation function
-  const t = (key: string): string => {
+  const t = (key: string, options?: TranslationOptions): any => {
     const keys = key.split('.');
     let value = translations[language];
     
@@ -61,6 +66,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       } else {
         return key;
       }
+    }
+    
+    if (options?.returnObjects) {
+      return value;
     }
     
     return typeof value === 'string' ? value : key;

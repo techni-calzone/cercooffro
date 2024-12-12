@@ -28,7 +28,7 @@ export default function TelegramLogin({
   usePic = true,
   className = '',
 }: TelegramLoginProps) {
-  const { login } = useAuth();
+  const { loginWithTelegram } = useAuth();
 
   useEffect(() => {
     console.log("useEffect running, adding Telegram script"); 
@@ -53,21 +53,23 @@ export default function TelegramLogin({
     }
 
     const handleAuth = async (user: any) => {
-      console.log("Telegram user authenticated:", user); 
-      // Send user data to the server for verification
-      const response = await fetch('/api/auth/telegram', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      });
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/telegram/validate`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(user),
+        });
 
-      if (response.ok) {
-        const userData = await response.json();
-        login(userData);
-      } else {
-        console.error('Authentication failed');
+        if (response.ok) {
+          const userData = await response.json();
+          await loginWithTelegram(userData);
+        } else {
+          console.error('Authentication failed');
+        }
+      } catch (error) {
+        console.error('Error during Telegram authentication:', error);
       }
     };
 
@@ -82,7 +84,7 @@ export default function TelegramLogin({
         container.removeChild(script);
       }
     };
-  }, [botName, buttonSize, cornerRadius, requestAccess, usePic, login]);
+  }, [botName, buttonSize, cornerRadius, requestAccess, usePic, loginWithTelegram]);
 
   return (
     <div id="telegram-login-container" className={className}>

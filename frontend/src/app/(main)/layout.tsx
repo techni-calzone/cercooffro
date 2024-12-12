@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import ClientLayout from '@/components/ClientLayout';
+import ClientLayout from '@/components/layout/ClientLayout';
 
 export default function MainLayout({
   children,
@@ -9,7 +9,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isListingsPage = pathname.startsWith('/listings');
+  const isListingsPage = pathname ? pathname.startsWith('/listings') : false;
 
   if (isListingsPage) {
     return children;

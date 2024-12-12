@@ -2,53 +2,83 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import TelegramLogin from '@/components/TelegramLogin';
 import { useAuth } from '@/context/AuthContext';
 import { useLanguage } from '@/context/LanguageContext';
+import { toast } from 'react-hot-toast';
 
 export default function LoginPage() {
-  const { isAuthenticated } = useAuth();
+  const { user, login } = useAuth();
   const router = useRouter();
   const { t } = useLanguage();
 
   useEffect(() => {
-    if (isAuthenticated) {
+    // Redirect if user is already logged in
+    if (user) {
       router.push('/');
     }
-  }, [isAuthenticated, router]);
+  }, [user, router]);
+
+  const handleTelegramResponse = async (response: any) => {
+    try {
+      // Validate the response from Telegram login widget
+      if (!response || !response.id) {
+        throw new Error('Invalid login response');
+      }
+
+      // Call your backend to verify the Telegram auth data
+      const verificationResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/telegram/verify`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(response),
+        }
+      );
+
+      if (!verificationResponse.ok) {
+        throw new Error('Failed to verify Telegram login');
+      }
+
+      const userData = await verificationResponse.json();
+      await login(userData.email, userData.password);
+      toast.success(t('login.success'));
+    } catch (error) {
+      console.error('Login error:', error);
+      toast.error(t('login.error'));
+    }
+  };
+
+  // Return early if user is already logged in
+  if (user) {
+    return null;
+  }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg border border-gray-200">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            {t('login.sign_in')}
+            {t('login.title')}
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            {t('login.use_telegram')}
-          </p>
-          <p className="mt-2 text-center text-sm text-gray-500">
-            {t('login.notice')}
-          </p>
-          <p className="mt-2 text-center text-sm text-gray-500">
-            {t('login.download_notice')}
+            {t('login.description')}
           </p>
         </div>
-        <div className="mt-8 flex justify-center">
-          <TelegramLogin
-            botName="cerco_offro_bot" // Replace with your bot name
-            className="flex justify-center"
-          />
-        </div>
-        <div className="mt-4 text-center">
-          <a 
-            href="https://telegram.org/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-block bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-200"
-          >
-            {t('login.download_button')}
-          </a>
+
+        <div className="mt-8 space-y-6">
+          <div>
+            <script
+              async
+              src="https://telegram.org/js/telegram-widget.js?22"
+              data-telegram-login={process.env.NEXT_PUBLIC_TELEGRAM_BOT_NAME}
+              data-size="large"
+              data-radius="8"
+              data-onauth="onTelegramAuth(user)"
+              data-request-access="write"
+            ></script>
+          </div>
         </div>
       </div>
     </div>

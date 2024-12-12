@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FaMapMarkerAlt, FaCalendarAlt, FaUsers, FaSearch, FaFilter } from 'react-icons/fa';
-import LocationDropdown from './SearchDropdowns/LocationDropdown';
-import DatesDropdown from './SearchDropdowns/DatesDropdown';
-import GuestsDropdown from './SearchDropdowns/GuestsDropdown';
-import FilterDropdown from './SearchDropdowns/FilterDropdown';
-import { useLanguage } from '../context/LanguageContext';
+import LocationDropdown from '@/components/features/search/SearchDropdowns/LocationDropdown';
+import DatesDropdown from '@/components/features/search/SearchDropdowns/DatesDropdown';
+import GuestsDropdown from '@/components/features/search/SearchDropdowns/GuestsDropdown';
+import FilterDropdown from '@/components/features/search/SearchDropdowns/FilterDropdown';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface SearchBarProps {
   onLocationSelect: (location: string) => void;
