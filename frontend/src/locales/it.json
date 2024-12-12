@@ -1,0 +1,365 @@
+{
+    "app_name": "Aggregatore Affitti Studenti",
+    "welcome_message": "Trova il tuo prossimo appartamento perfetto",
+    "search_placeholder": "Cerca appartamenti vicino alla tua università",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "navbar": {
+        "home": "Home",
+        "listings": "Annunci",
+        "about": "Chi siamo",
+        "addListing": "Aggiungi Annuncio",
+        "location": "Posizione",
+        "dates": "Date",
+        "guests": "Ospiti",
+        "filters": "Filtri",
+        "toggleSearch": "Attiva/Disattiva ricerca",
+        "toggleMenu": "Attiva/Disattiva menu",
+        "search": "Cerca",
+        "login": "Accedi"
+    },
+    "secondaryNavbar": {
+        "listings": "Annunci",
+        "searchers": "Ricercatori",
+        "roommates": "Coinquilini",
+        "about": "Chi siamo",
+        "contact": "Contatti",
+        "feedback": "Feedback",
+        "language": "Lingua",
+        "english": "Inglese",
+        "italian": "Italiano",
+        "privacy": "Privacy",
+        "terms": "Termini"
+    },
+    "home": {
+        "hero": {
+            "title": "Trova la Tua Casa Studentesca Perfetta",
+            "subtitle": "Scopri alloggi per studenti convenienti in tutta Italia",
+            "addOffer": "Aggiungi il Tuo Annuncio",
+            "browseListings": "Sfoglia gli Annunci"
+        },
+        "heroTitle": "Trova il Tuo Alloggio Studentesco Ideale",
+        "heroSubtitle": "Mettiti in contatto con studenti e proprietari nelle principali città universitarie italiane",
+        "postListing": "Pubblica la Tua Proprietà",
+        "findAccommodation": "Trova Alloggio",
+        "activeListings": "Annunci Attivi",
+        "happyStudents": "Studenti Soddisfatti",
+        "universities": "Università",
+        "cities": "Città",
+        "cercoDescription": "Trova studenti che cercano alloggio",
+        "offroDescription": "Sfoglia gli annunci disponibili",
+        "viewAllListings": "Visualizza Tutti gli Annunci",
+        "viewAllSearchers": "Visualizza Tutti i Ricercatori",
+        "featuresTitle": "Perché Scegliere CercoOffro?",
+        "featuresSubtitle": "Scopri come semplifichiamo e rendiamo sicuro l'alloggio per studenti",
+        "feature1Title": "Concentrato sugli Studenti",
+        "feature1Description": "Creato specificamente per studenti e giovani professionisti in cerca di alloggio.",
+        "feature2Title": "Annunci Verificati",
+        "feature2Description": "Tutti gli annunci sono verificati per garantire sicurezza e affidabilità.",
+        "feature3Title": "Comunicazione Semplice",
+        "feature3Description": "Sistema di messaggistica diretta tra proprietari e potenziali inquilini.",
+        "openSourceTitle": "Creato da Studenti, per Studenti",
+        "openSourceDescription": "CercoOffro è un progetto open-source creato da studenti che comprendono le difficoltà di trovare alloggio. Supporta la nostra missione per rendere l'alloggio studentesco accessibile a tutti!",
+        "viewOnGithub": "Visualizza su GitHub",
+        "supportProject": "Supporta il Progetto",
+        "advertisementTitle": "Partner in Evidenza",
+        "features": {
+            "title": "Perché Scegliere CercoOffro",
+            "feature1": {
+                "title": "Annunci Verificati",
+                "description": "Ogni annuncio è attentamente verificato per sicurezza e qualità"
+            },
+            "feature2": {
+                "title": "Comunità Studentesca",
+                "description": "Entra in contatto con altri studenti e trova i tuoi coinquilini perfetti"
+            },
+            "feature3": {
+                "title": "Posizioni Ottimali",
+                "description": "Trova alloggi vicino alle migliori università in tutta Italia"
+            }
+        },
+        "value_propositions": [
+            "Opzioni di alloggio a prezzi accessibili per studenti",
+            "Collegati con i coinquilini e trova la tua corrispondenza perfetta",
+            "Esplora gli annunci nella tua città universitaria",
+            "Ricevi raccomandazioni personalizzate in base alle tue preferenze"
+        ]
+    },
+    "about": {
+        "aboutTitle": "Chi Siamo",
+        "ourMission": "La Nostra Missione",
+        "missionText": "Fornire un'esperienza senza interruzioni per gli studenti che cercano alloggio.",
+        "whatWeOffer": "Cosa Offriamo",
+        "comprehensiveListings": "Elenchi completi di alloggi per studenti.",
+        "easyToUseSearch": "Un'interfaccia di ricerca facile da usare.",
+        "detailedInfo": "Informazioni dettagliate su ogni annuncio.",
+        "multiLanguageSupport": "Supporto per più lingue.",
+        "directContact": "Contatto diretto con i proprietari."
+    },
+    "filters": {
+        "price": "Prezzo",
+        "location": "Posizione",
+        "university": "Università",
+        "checkIn": "Check-in",
+        "checkOut": "Check-out",
+        "students": "Studenti",
+        "rooms": "Stanze",
+        "studentsLabel": "Studenti",
+        "roomsLabel": "Stanze",
+        "guestsHint": "Seleziona il numero di ospiti",
+        "roomsHint": "Seleziona il numero di stanze"
+    },
+    "listing": {
+        "available": "Disponibile",
+        "sold": "Venduto",
+        "vote_status": "Stato del voto"
+    },
+    "subscription": {
+        "free_tier": "Piano Gratuito",
+        "premium_tier": "Piano Premium",
+        "features": {
+            "basic_search": "Ricerca Base",
+            "advanced_filters": "Filtri Avanzati",
+            "priority_alerts": "Avvisi Prioritari"
+        }
+    },
+    "mockListings": {
+        "listing1": {
+            "title": "Accogliente Monolocale Vicino all'Università",
+            "location": "Milano",
+            "university": "Politecnico di Milano"
+        },
+        "listing2": {
+            "title": "Appartamento Moderno in Centro Città",
+            "location": "Roma",
+            "university": "Sapienza Università di Roma"
+        },
+        "listing3": {
+            "title": "Casa Condivisa per Studenti",
+            "location": "Firenze",
+            "university": "Università degli Studi di Firenze"
+        },
+        "listing4": {
+            "title": "Stanza Tranquilla in Edificio Storico",
+            "location": "Bologna",
+            "university": "Università di Bologna"
+        }
+    },
+    "listings": {
+        "price": "Prezzo",
+        "perMonth": "al mese",
+        "rating": "Valutazione",
+        "location": "Posizione",
+        "university": "Università",
+        "filters": {
+            "title": "Filtri",
+            "price": "Fascia di Prezzo",
+            "location": "Posizione",
+            "type": "Tipologia di Immobile",
+            "apply": "Applica Filtri"
+        },
+        "noResults": "Nessun annuncio trovato",
+        "loadMore": "Carica Altri"
+    },
+    "listingsPage": {
+        "title": "Annunci Disponibili",
+        "subtitle": "Trova il tuo alloggio studentesco perfetto.",
+        "listingTitle": "Annuncio {listing}",
+        "listingDescription": "Spazioso appartamento per studenti vicino al campus universitario."
+    },
+    "searchersPage": {
+        "title": "Crea Profilo Ricercatore",
+        "subtitle": "Mettiti in contatto con studenti in cerca di alloggio",
+        "addProfile": "Aggiungi Profilo Ricercatore",
+        "results": "ricercatori trovati",
+        "noResults": "Nessun ricercatore trovato corrispondente ai tuoi criteri",
+        "moveIn": "Trasloco",
+        "people": "persone",
+        "contactRoommate": "Contatta via Telegram",
+        "requirements": {
+            "title": "Requisiti",
+            "budget": "Fascia di Budget",
+            "location": "Posizioni Preferite",
+            "tags": "Tag",
+            "moveInDate": "Data di Trasloco",
+            "duration": {
+                "title": "Durata del Soggiorno",
+                "min": "Minimo (mesi)",
+                "max": "Massimo (mesi)"
+            },
+            "groupSize": "Dimensione del Gruppo"
+        },
+        "personalInfo": {
+            "title": "Informazioni Personali",
+            "firstName": "Nome",
+            "lastName": "Cognome",
+            "age": "Età",
+            "nationality": "Nazionalità",
+            "sex": "Sesso",
+            "monthlyIncome": "Reddito Mensile",
+            "contactInfo": {
+                "title": "Informazioni di Contatto",
+                "telegramUsername": "Username Telegram",
+                "email": "Email",
+                "phoneNumber": "Numero di Telefono"
+            }
+        },
+        "academicProfile": {
+            "title": "Profilo Accademico",
+            "university": "Università",
+            "studyLevel": "Livello di Studio",
+            "studyField": "Campo di Studio",
+            "department": "Dipartimento",
+            "expectedGraduation": "Data di Laurea Prevista"
+        },
+        "financialInfo": {
+            "title": "Informazioni Finanziarie",
+            "monthlyIncome": "Reddito Mensile",
+            "financialStatus": "Situazione Finanziaria",
+            "budgetPreference": {
+                "title": "Preferenza di Budget",
+                "min": "Budget Minimo",
+                "max": "Budget Massimo"
+            }
+        },
+        "options": {
+            "sex": {
+                "male": "Maschio",
+                "female": "Femmina",
+                "other": "Altro"
+            },
+            "studyLevel": {
+                "undergraduate": "Laurea Triennale",
+                "graduate": "Laurea Magistrale",
+                "phd": "Dottorato di Ricerca",
+                "postdoc": "Post-dottorato"
+            },
+            "studyField": {
+                "engineering": "Ingegneria",
+                "computerScience": "Informatica",
+                "business": "Economia",
+                "medicine": "Medicina",
+                "law": "Giurisprudenza",
+                "arts": "Arte",
+                "humanities": "Lettere e Filosofia",
+                "socialSciences": "Scienze Sociali",
+                "naturalSciences": "Scienze Naturali",
+                "other": "Altro"
+            },
+            "financialStatus": {
+                "student": "Studente",
+                "workingStudent": "Studente Lavoratore",
+                "scholarship": "Borsista",
+                "other": "Altro"
+            }
+        },
+        "filters": {
+            "title": "Filtri",
+            "apply": "Applica Filtri",
+            "clear": "Pulisci Filtri",
+            "budget": {
+                "title": "Budget",
+                "min": "Budget Min",
+                "max": "Budget Max"
+            },
+            "location": "Posizione",
+            "moveInDate": "Data di Trasloco",
+            "duration": "Durata",
+            "groupSize": "Dimensione del Gruppo"
+        },
+        "buttons": {
+            "cancel": "Annulla",
+            "save": "Salva"
+        }
+    },
+    "searchers": {
+        "title": "Ricercatori Studenti",
+        "subtitle": "Mettiti in contatto con studenti in cerca di alloggio",
+        "addProfile": "Aggiungi Profilo Ricercatore",
+        "noProfiles": "Nessun profilo ricercatore trovato"
+    },
+    "listings": {
+        "title": "Annunci Disponibili",
+        "subtitle": "Trova il tuo alloggio studentesco perfetto",
+        "listingTitle": "Annuncio {{listing}}",
+        "listingDescription": "Bellissimo appartamento vicino all'università",
+        "noListings": "Nessun annuncio trovato"
+    },
+    "errors": {
+        "no_listings": "Nessun annuncio trovato",
+        "search_error": "Errore durante la ricerca"
+    },
+    "common": {
+        "loading": "Caricamento...",
+        "error": "Si è verificato un errore",
+        "retry": "Riprova",
+        "select": "Seleziona un'opzione"
+    },
+    "feedbackModal": {
+        "title": "Invia Feedback",
+        "subtitle": "Aiutaci a migliorare la tua esperienza",
+        "generalFeedback": "Feedback Generale",
+        "generalFeedbackDescription": "Condividi i tuoi pensieri e suggerimenti",
+        "reportBug": "Segnala un Bug",
+        "reportBugDescription": "Aiutaci a risolvere i problemi segnalando bug",
+        "cancel": "Chiudi"
+    },
+    "searchBar": {
+        "where": "Dove",
+        "when": "Quando",
+        "who": "Chi",
+        "search": "Cerca",
+        "searchCitiesUniversitiesOrRegions": "Cerca città, università o regioni",
+        "addDates": "Aggiungi date",
+        "addGuests": "Aggiungi ospiti",
+        "students": "Persone",
+        "rooms": "Stanze",
+        "filters": {
+            "title": "Filtri",
+            "apply": "Applica Filtri",
+            "clear": "Pulisci Filtri"
+        },
+        "location": {
+            "title": "Posizione",
+            "placeholder": "Dove stai andando?",
+            "popular": "Destinazioni popolari"
+        },
+        "dates": {
+            "title": "Date",
+            "checkIn": "Check-in",
+            "checkOut": "Check-out",
+            "flexible": "Sono flessibile"
+        },
+        "guests": {
+            "title": "Ospiti",
+            "students": "Studenti",
+            "rooms": "Stanze",
+            "studentsHint": "Numero di studenti",
+            "roomsHint": "Numero di stanze necessarie"
+        }
+    },
+    "datesDropdown": {
+        "checkInLabel": "Check-in",
+        "checkOutLabel": "Check-out",
+        "cancel": "Annulla",
+        "apply": "Applica"
+    },
+    "guestsDropdown": {
+        "who": "Chi",
+        "studentsLabel": "Studenti",
+        "roomsLabel": "Stanze",
+        "studentsHint": "Numero di studenti",
+        "roomsHint": "Numero di stanze necessarie"
+    },
+    "locationDropdown": {
+        "location": "Posizione",
+        "searchLocation": "Cerca una posizione..."
+    },
+    "login": {
+        "notice": "Non preoccuparti, i tuoi dati sono al sicuro con noi!",
+        "download_notice": "Non hai Telegram? Scaricalo ora!",
+        "sign_in": "Accedi al tuo account",
+        "use_telegram": "Usa il tuo account Telegram per continuare",
+        "download_button": "Scarica Telegram e registrati"
+    }
+}

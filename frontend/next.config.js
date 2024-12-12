@@ -17,9 +17,9 @@ const nextConfig = {
     ],
   },
   // Add metadata base for social sharing and image resolution
-  metadataBase: new URL('https://www.cercooffro.com'),
-  
-  // Add script for Google AdSense
+  metadataBase: new URL('https://www.cercooffro.it/'),
+
+  // Add script for Google AdSense and Telegram
   async headers() {
     return [
       {
@@ -27,13 +27,13 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com",
+            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://telegram.org",
           },
         ],
       },
     ];
   },
-  
+
   // Add external scripts
   webpack: (config, { isServer }) => {
     if (!isServer) {

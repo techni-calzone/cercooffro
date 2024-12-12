@@ -1,11 +1,11 @@
 export const EXTERNAL_LINKS = {
   FEEDBACK: {
     GENERAL_FEEDBACK: {
-      en: "https://docs.google.com/forms/d/e/1FAIpQLSfDKqOqP4ufqyFqNLyXqUgQJqVHzNKYhqfDKqLzDwKG4Ld1Aw/viewform?usp=sf_link",
-      it: "https://docs.google.com/forms/d/e/1FAIpQLSfDKqOqP4ufqyFqNLyXqUgQJqVHzNKYhqfDKqLzDwKG4Ld1Aw/viewform?usp=sf_link"
+      en: "https://forms.gle/aR82pJpHYY71joZ96",
+      it: "https://forms.gle/aR82pJpHYY71joZ96"
     },
     REPORT_BUG: {
-      DEFAULT: "https://github.com/CercoOffro/student-rental-aggregator/issues/new"
+      DEFAULT: "https://github.com/techni-calzone/cercooffro/issues/new"
     }
   },
   SOCIAL_MEDIA: {

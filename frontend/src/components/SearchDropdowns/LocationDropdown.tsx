@@ -56,11 +56,12 @@ const LocationDropdown = ({
       className={`absolute z-20 top-full left-0 mt-2 w-full max-w-md bg-white rounded-xl shadow-lg p-4 ${className}`}
     >
       <div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700 mb-1">{t('locationDropdown.location')}</label>
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder={t('searchLocation')}
+          placeholder={t('locationDropdown.searchLocation')}
           className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cercooffro-primary"
         />
       </div>

@@ -1,0 +1,360 @@
+{
+    "app_name": "Student Rental Aggregator",
+    "welcome_message": "Find your perfect next apartment",
+    "search_placeholder": "Search apartments near your university",
+    "navbar": {
+        "home": "Home",
+        "listings": "Listings",
+        "about": "About",
+        "addListing": "Add Listing",
+        "location": "Location",
+        "dates": "Dates",
+        "guests": "Guests",
+        "filters": "Filters",
+        "toggleSearch": "Toggle search",
+        "toggleMenu": "Toggle menu",
+        "search": "Search",
+        "login": "Login"
+    },
+    "secondaryNavbar": {
+        "listings": "Listings",
+        "searchers": "Searchers",
+        "roommates": "Roommates",
+        "about": "About",
+        "contact": "Contact",
+        "feedback": "Feedback",
+        "language": "Language",
+        "english": "English",
+        "italian": "Italian",
+        "privacy": "Privacy",
+        "terms": "Terms"
+    },
+    "home": {
+        "hero": {
+            "title": "Find Your Perfect Student Home",
+            "subtitle": "Discover affordable and convenient student housing across Italy",
+            "addOffer": "Add Your Listing",
+            "browseListings": "Browse Listings"
+        },
+        "heroTitle": "Find Your Perfect Student Housing Match",
+        "heroSubtitle": "Connect with students and landlords across Italy's top university cities",
+        "postListing": "Post Your Property",
+        "findAccommodation": "Find Accommodation",
+        "activeListings": "Active Listings",
+        "happyStudents": "Happy Students",
+        "universities": "Universities",
+        "cities": "Cities",
+        "cercoDescription": "Find students looking for accommodation",
+        "offroDescription": "Browse available listings",
+        "viewAllListings": "View All Listings",
+        "viewAllSearchers": "View All Searchers",
+        "featuresTitle": "Why Choose CercoOffro?",
+        "featuresSubtitle": "Discover how we make student housing simple and secure",
+        "feature1Title": "Student-Focused",
+        "feature1Description": "Tailored specifically for students and young professionals seeking accommodation.",
+        "feature2Title": "Verified Listings",
+        "feature2Description": "All listings are verified to ensure safety and reliability.",
+        "feature3Title": "Easy Communication",
+        "feature3Description": "Direct messaging system between landlords and potential tenants.",
+        "openSourceTitle": "Built by Students, for Students",
+        "openSourceDescription": "CercoOffro is an open-source project created by students who understand the challenges of finding student accommodation. Support our mission to make student housing accessible to all!",
+        "viewOnGithub": "View on GitHub",
+        "supportProject": "Support the Project",
+        "advertisementTitle": "Featured Partners",
+        "features": {
+            "title": "Why Choose CercoOffro",
+            "feature1": {
+                "title": "Verified Listings",
+                "description": "Every listing is carefully verified for safety and quality"
+            },
+            "feature2": {
+                "title": "Student Community",
+                "description": "Connect with fellow students and find your perfect roommates"
+            },
+            "feature3": {
+                "title": "Prime Locations",
+                "description": "Find housing near top universities across Italy"
+            }
+        }
+    },
+    "about": {
+        "aboutTitle": "About Us",
+        "ourMission": "Our Mission",
+        "missionText": "To provide a seamless experience for students seeking accommodation.",
+        "whatWeOffer": "What We Offer",
+        "comprehensiveListings": "Comprehensive listings of student accommodations.",
+        "easyToUseSearch": "An easy-to-use search interface.",
+        "detailedInfo": "Detailed information on each listing.",
+        "multiLanguageSupport": "Support for multiple languages.",
+        "directContact": "Direct contact with landlords."
+    },
+    "filters": {
+        "price": "Price",
+        "location": "Location",
+        "university": "University",
+        "checkIn": "Check-in",
+        "checkOut": "Check-out",
+        "students": "Students",
+        "rooms": "Rooms",
+        "studentsLabel": "Students",
+        "roomsLabel": "Rooms",
+        "guestsHint": "Select the number of guests",
+        "roomsHint": "Select the number of rooms"
+    },
+    "listing": {
+        "available": "Available",
+        "sold": "Sold",
+        "vote_status": "Vote status"
+    },
+    "subscription": {
+        "free_tier": "Free Plan",
+        "premium_tier": "Premium Plan",
+        "features": {
+            "basic_search": "Basic Search",
+            "advanced_filters": "Advanced Filters", 
+            "priority_alerts": "Priority Alerts"
+        }
+    },
+    "mockListings": {
+        "listing1": {
+            "title": "Cozy Studio Near University",
+            "location": "Milan",
+            "university": "Politecnico di Milano"
+        },
+        "listing2": {
+            "title": "Modern Apartment in City Center",
+            "location": "Rome",
+            "university": "Sapienza University"
+        },
+        "listing3": {
+            "title": "Student Friendly Shared House",
+            "location": "Florence",
+            "university": "University of Florence"
+        },
+        "listing4": {
+            "title": "Quiet Room in Historical Building",
+            "location": "Bologna",
+            "university": "University of Bologna"
+        }
+    },
+    "listings": {
+        "price": "Price",
+        "perMonth": "per month",
+        "rating": "Rating",
+        "location": "Location",
+        "university": "University",
+        "filters": {
+            "title": "Filters",
+            "price": "Price Range",
+            "location": "Location",
+            "type": "Property Type",
+            "apply": "Apply Filters"
+        },
+        "noResults": "No listings found",
+        "loadMore": "Load More"
+    },
+    "listingsPage": {
+        "title": "Available Listings",
+        "subtitle": "Find your perfect student accommodation.",
+        "listingTitle": "Listing {listing}",
+        "listingDescription": "Spacious student apartment near university campus."
+    },
+    "searchersPage": {
+        "title": "Create Searcher Profile",
+        "subtitle": "Connect with students looking for accommodation",
+        "addProfile": "Add Searcher Profile",
+        "results": "searchers found",
+        "noResults": "No searchers found matching your criteria",
+        "moveIn": "Move in",
+        "people": "people",
+        "contactRoommate": "Contact via Telegram",
+        "requirements": {
+            "title": "Requirements",
+            "budget": "Budget Range",
+            "location": "Preferred Locations",
+            "tags": "Tags",
+            "moveInDate": "Move-in Date",
+            "duration": {
+                "title": "Stay Duration",
+                "min": "Minimum (months)",
+                "max": "Maximum (months)"
+            },
+            "groupSize": "Group Size"
+        },
+        "personalInfo": {
+            "title": "Personal Information",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "age": "Age",
+            "nationality": "Nationality",
+            "sex": "Sex",
+            "monthlyIncome": "Monthly Income",
+            "contactInfo": {
+                "title": "Contact Information",
+                "telegramUsername": "Telegram Username",
+                "email": "Email",
+                "phoneNumber": "Phone Number"
+            }
+        },
+        "academicProfile": {
+            "title": "Academic Profile",
+            "university": "University",
+            "studyLevel": "Study Level",
+            "studyField": "Field of Study",
+            "department": "Department",
+            "expectedGraduation": "Expected Graduation Date"
+        },
+        "financialInfo": {
+            "title": "Financial Information",
+            "monthlyIncome": "Monthly Income",
+            "financialStatus": "Financial Status",
+            "budgetPreference": {
+                "title": "Budget Preference",
+                "min": "Minimum Budget",
+                "max": "Maximum Budget"
+            }
+        },
+        "options": {
+            "sex": {
+                "male": "Male",
+                "female": "Female",
+                "other": "Other"
+            },
+            "studyLevel": {
+                "undergraduate": "Undergraduate",
+                "graduate": "Graduate",
+                "phd": "PhD",
+                "postdoc": "Postdoc"
+            },
+            "studyField": {
+                "engineering": "Engineering",
+                "computerScience": "Computer Science",
+                "business": "Business",
+                "medicine": "Medicine",
+                "law": "Law",
+                "arts": "Arts",
+                "humanities": "Humanities",
+                "socialSciences": "Social Sciences",
+                "naturalSciences": "Natural Sciences",
+                "other": "Other"
+            },
+            "financialStatus": {
+                "student": "Student",
+                "workingStudent": "Working Student",
+                "scholarship": "Scholarship",
+                "other": "Other"
+            }
+        },
+        "filters": {
+            "title": "Filters",
+            "apply": "Apply Filters",
+            "clear": "Clear Filters",
+            "budget": {
+                "title": "Budget",
+                "min": "Min Budget",
+                "max": "Max Budget"
+            },
+            "location": "Location",
+            "moveInDate": "Move-in Date",
+            "duration": "Duration",
+            "groupSize": "Group Size"
+        }
+    },
+    "searchers": {
+        "title": "Student Searchers",
+        "subtitle": "Connect with students looking for accommodation",
+        "addProfile": "Add Searcher Profile",
+        "noProfiles": "No searcher profiles found"
+    },
+    "listings": {
+        "title": "Available Listings",
+        "subtitle": "Find your perfect student accommodation",
+        "listingTitle": "Listing {{listing}}",
+        "listingDescription": "Beautiful apartment near university",
+        "noListings": "No listings found"
+    },
+    "errors": {
+        "no_listings": "No listings found",
+        "search_error": "Error during search"
+    },
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "retry": "Retry",
+        "select": "Select an option"
+    },
+    "feedbackModal": {
+        "title": "Send Feedback",
+        "subtitle": "Help us improve your experience",
+        "generalFeedback": "General Feedback",
+        "generalFeedbackDescription": "Share your thoughts and suggestions",
+        "reportBug": "Report a Bug",
+        "reportBugDescription": "Help us fix issues by reporting bugs",
+        "cancel": "Close"
+    },
+    "searchBar": {
+        "where": "Where",
+        "when": "When",
+        "who": "Who",
+        "search": "Search",
+        "searchCitiesUniversitiesOrRegions": "Search cities, universities, or regions",
+        "addDates": "Add dates",
+        "addGuests": "Add guests",
+        "students": "People",
+        "rooms": "Rooms",
+        "filters": {
+            "title": "Filters",
+            "apply": "Apply Filters",
+            "clear": "Clear Filters"
+        },
+        "location": {
+            "title": "Location",
+            "placeholder": "Where are you going?",
+            "popular": "Popular destinations"
+        },
+        "dates": {
+            "title": "Dates",
+            "checkIn": "Check-in",
+            "checkOut": "Check-out",
+            "flexible": "I'm flexible"
+        },
+        "guests": {
+            "title": "Guests",
+            "students": "Students",
+            "rooms": "Rooms",
+            "studentsHint": "Number of students",
+            "roomsHint": "Number of rooms needed"
+        }
+    },
+    "datesDropdown": {
+        "checkInLabel": "Check-in",
+        "checkOutLabel": "Check-out",
+        "cancel": "Cancel",
+        "apply": "Apply"
+    },
+    "guestsDropdown": {
+        "who": "Who",
+        "studentsLabel": "Students",
+        "roomsLabel": "Rooms",
+        "studentsHint": "Number of students",
+        "roomsHint": "Number of rooms needed"
+    },
+    "locationDropdown": {
+        "location": "Location",
+        "searchLocation": "Search for a location..."
+    },
+    "value_propositions": [
+        "Affordable housing options for students",
+        "Connect with roommates and find your perfect match",
+        "Explore listings in your university city",
+        "Get personalized recommendations based on your preferences"
+    ],
+    "login": {
+        "notice": "Don't worry, your data is safe with us!",
+        "download_notice": "Don't have Telegram? Get it now!",
+        "sign_in": "Sign in to your account",
+        "use_telegram": "Use your Telegram account to continue",
+        "download_button": "Download Telegram and sign up"
+    }
+
+}

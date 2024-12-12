@@ -69,14 +69,14 @@ const GuestsDropdown = ({
     >
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-4 text-cercooffro-primary flex items-center">
-          <FaUsers className="mr-2" /> {t('who')}
+          <FaUsers className="mr-2" /> {t('guestsDropdown.who')}
         </h3>
         
         <div className="space-y-4">
           <div className="flex justify-between items-center">
             <div>
-              <div className="font-medium">{t('students')}</div>
-              <div className="text-sm text-gray-600">{t('guestsHint')}</div>
+              <div className="font-medium">{t('guestsDropdown.studentsLabel')}</div>
+              <div className="text-sm text-gray-600">{t('guestsDropdown.studentsHint')}</div>
             </div>
             <div className="flex items-center space-x-2">
               <button 
@@ -103,8 +103,8 @@ const GuestsDropdown = ({
 
           <div className="flex justify-between items-center">
             <div>
-              <div className="font-medium">{t('rooms')}</div>
-              <div className="text-sm text-gray-600">{t('roomsHint')}</div>
+              <div className="font-medium">{t('guestsDropdown.roomsLabel')}</div>
+              <div className="text-sm text-gray-600">{t('guestsDropdown.roomsHint')}</div>
             </div>
             <div className="flex items-center space-x-2">
               <button 

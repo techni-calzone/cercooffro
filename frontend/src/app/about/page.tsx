@@ -8,22 +8,22 @@ export default function AboutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">{t('aboutTitle')}</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('about.aboutTitle')}</h1>
       
       <div className="prose max-w-none">
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">{t('ourMission')}</h2>
-          <p className="mb-4">{t('missionText')}</p>
+          <h2 className="text-2xl font-semibold mb-4">{t('about.ourMission')}</h2>
+          <p className="mb-4">{t('about.missionText')}</p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">{t('whatWeOffer')}</h2>
+          <h2 className="text-2xl font-semibold mb-4">{t('about.whatWeOffer')}</h2>
           <ul className="list-disc pl-6 mb-4">
-            <li>{t('comprehensiveListings')}</li>
-            <li>{t('easyToUseSearch')}</li>
-            <li>{t('detailedInfo')}</li>
-            <li>{t('multiLanguageSupport')}</li>
-            <li>{t('directContact')}</li>
+            <li>{t('about.comprehensiveListings')}</li>
+            <li>{t('about.easyToUseSearch')}</li>
+            <li>{t('about.detailedInfo')}</li>
+            <li>{t('about.multiLanguageSupport')}</li>
+            <li>{t('about.directContact')}</li>
           </ul>
         </section>
       </div>

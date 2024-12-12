@@ -20,20 +20,19 @@ export default function SearchersPage() {
             <FaUserFriends className="w-10 h-10 text-cercooffro-primary" />
             <div>
               <h1 className="text-3xl font-bold text-gray-800">
-                {t('searchersPage.title')}
+                {t('searchers.title')}
               </h1>
               <p className="text-gray-600">
-                {t('searchersPage.subtitle')}
+                {t('searchers.subtitle')}
               </p>
             </div>
           </div>
-          
           <button 
             onClick={() => setShowCreateProfile(!showCreateProfile)}
             className="flex items-center space-x-2 bg-cercooffro-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
           >
             <FaPlus className="w-5 h-5" />
-            <span>{t('searchersPage.addSearcherProfile')}</span>
+            <span>{t('searchers.addProfile')}</span>
           </button>
         </div>
 

@@ -80,3 +80,6 @@ build/
 *.tmp
 *.bak
 .DS_Store
+
+# windsurf rules
+.windsurfrules

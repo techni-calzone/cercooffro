@@ -2,13 +2,8 @@ import * as React from 'react';
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import './globals.css'
-
-// Explicitly import all components
-import NavBar from '@/components/NavBar'
-import Footer from '@/components/Footer'
-import { LanguageProvider } from '@/context/LanguageContext'
-import AdBlockerModal from '@/components/AdBlockerModal';
-import AnalyticsProvider from '@/components/AnalyticsProvider';
+import RootLayoutClient from '@/components/RootLayoutClient';
+import { AuthProvider } from '@/context/AuthContext';
 
 // Initialize Inter font
 const inter = Inter({ 
@@ -26,31 +21,25 @@ export const metadata: Metadata = {
     images: ['/images/italian-university-campus-1.jpg']
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico'
+    icon: '/favicon.svg',
+    apple: '/favicon.svg'
   }
 }
 
-// Layout component
+// Root Layout component
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={inter.variable}>
       <body>
-        <LanguageProvider>
-          <div className="flex flex-col min-h-screen">
-            <NavBar />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-            <AdBlockerModal />
-          </div>
-        </LanguageProvider>
-        <AnalyticsProvider />
+        <AuthProvider>
+          <RootLayoutClient>
+            {children}
+          </RootLayoutClient>
+        </AuthProvider>
       </body>
     </html>
   );

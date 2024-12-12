@@ -7,6 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { 
   FaHome, 
   FaSearch, 
+  FaUsers,
   FaInfoCircle, 
   FaEnvelope, 
   FaKey, 
@@ -34,8 +35,8 @@ export default function SimpleNavbar() {
     },
     { 
       href: "/searchers", 
-      label: t('secondaryNavbar.searchers'), 
-      icon: FaSearch 
+      label: t('secondaryNavbar.roommates'), 
+      icon: FaUsers 
     },
     { 
       href: "/about", 
@@ -49,7 +50,7 @@ export default function SimpleNavbar() {
     },
     { 
       href: "#", 
-      label: t('navbar.feedback'), 
+      label: t('secondaryNavbar.feedback'), 
       icon: FaCommentDots,
       onClick: () => setIsFeedbackModalOpen(true)
     }
@@ -116,7 +117,7 @@ export default function SimpleNavbar() {
               } transition-colors`}
             >
               <FaGlobe className="w-6 h-6 mb-1" />
-              <span className="text-xs">{t('localization.language')}</span>
+              <span className="text-xs">{t('secondaryNavbar.language')}</span>
             </button>
 
             {isLanguageMenuOpen && (
@@ -129,7 +130,7 @@ export default function SimpleNavbar() {
                       : 'text-gray-700'
                   }`}
                 >
-                  {t('localization.english')}
+                  {t('english')}
                 </button>
                 <button 
                   onClick={() => handleLanguageChange('it')}
@@ -139,7 +140,7 @@ export default function SimpleNavbar() {
                       : 'text-gray-700'
                   }`}
                 >
-                  {t('localization.italian')}
+                  {t('italian')}
                 </button>
               </div>
             )}

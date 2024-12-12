@@ -1,160 +1,99 @@
 # 🏠 CercoOffro - Student Rental Aggregator
 
-An AI-powered rental aggregation platform designed specifically for students in Italy, focusing on comprehensive housing search and recommendation features.
+An AI-powered rental aggregation platform designed specifically for students in Italy, helping them find their perfect accommodation with ease and security.
 
 ## ✨ Features
 
 - 🔍 Advanced search with multiple filters
 - 🤖 AI-powered recommendations
-- 💬 Real-time chat with landlords
-- 🔔 Smart notifications
+- 🔐 Secure Telegram authentication
 - 🌍 Multilingual support (Italian/English)
 - 📱 Responsive design
-- 🔐 Secure authentication
 - 📊 Analytics and monitoring
+- 🏫 University-focused listings
+- 🤝 Student community features
 
-## 📚 Documentation
+## 🛠 Tech Stack
 
-- [Project Status](docs/PROJECT_STATUS.md)
-- [API Documentation](docs/API.md)
-- [Development Guide](docs/DEVELOPMENT.md)
+### Frontend
+- Next.js 13+
+- Tailwind CSS
+- i18next for localization
+- Telegram Login Widget
+
+### Backend
+- FastAPI
+- MongoDB Atlas
+- Python 3.11
+- OpenAI integration
+
+### Infrastructure
+- Docker
+- Coolify for deployment
+- MongoDB Atlas
+- Telegram Bot API
 
 ## 🚀 Quick Start
 
 1. Clone the repository
-2. Install dependencies
-3. Set up environment variables
-4. Run the application
+2. Install dependencies:
+   ```bash
+   # Frontend
+   cd frontend
+   npm install
 
-Detailed instructions in the [Development Guide](docs/DEVELOPMENT.md).
+   # Backend
+   cd backend
+   pip install -r requirements.txt
+   ```
+3. Set up environment variables (copy .env.example to .env)
+4. Run the development servers:
+   ```bash
+   # Frontend
+   npm run dev
 
-## 🛠 Tech Stack
+   # Backend
+   uvicorn app.main:app --reload
+   ```
 
-### Backend
-- FastAPI
-- MongoDB
-- Redis
-- WebSockets
-- Prometheus
+## 🌍 Environment Variables
 
-### Frontend
-- React
-- Material-UI
-- React Query
-- i18next
-- WebSocket client
-
-### Infrastructure
-- Docker
-- MongoDB (via MONGODB_URI env variable)
-- S3 (via S3_BUCKET env variable)
-- Prometheus
+### Required Environment Variables:
+- `MONGODB_URI`: MongoDB Atlas connection string
+- `MONGODB_DB_NAME`: Database name
+- `TELEGRAM_BOT_TOKEN`: Telegram Bot API token
+- `TELEGRAM_BOT_NAME`: Your Telegram bot's username
+- `NEXT_PUBLIC_API_URL`: Backend API URL
+- `NEXT_PUBLIC_BOT_NAME`: Telegram bot name for frontend
 
 ## 📦 Deployment
 
-To deploy the application, ensure the following environment variables are set:
-
-- `MONGODB_URI`: Connection string for MongoDB
-- `S3_BUCKET`: S3 bucket name for storage
-
-Use Docker Compose to start the services:
+The application is deployed using Coolify with Docker containers:
 
 ```bash
 docker-compose up --build
 ```
 
-## 🤝 Contributing
+Key deployment features:
+- Automatic container orchestration via Coolify
+- MongoDB Atlas for database
+- Secure Telegram authentication
+- Multi-language support (IT/EN)
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a pull request
+## 🌐 Localization
 
-See [Development Guide](docs/DEVELOPMENT.md) for detailed instructions.
+The application supports both Italian and English languages:
+- Frontend translations in `src/locales/{it,en}.json`
+- Dynamic language switching
+- SEO-friendly content in both languages
+
+## 🔐 Security
+
+- Authentication via Telegram
+- No storage of sensitive user data
+- Secure API endpoints
+- CORS protection with specific origins
 
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-The project follows an open-core model:
-- Core functionality (search, crowdsourcing, localization) is open source under MIT License
-- Premium features (AI recommendations, advanced filters) are proprietary
-- Mock data and development tools are open source
-
-## ❤️ Sponsorship
-
-Your support helps us maintain and improve the open-source core of Student Rental Aggregator! You can support us through:
-
-- [GitHub Sponsors](https://github.com/sponsors/student-rental-aggregator)
-- [Open Collective](https://opencollective.com/student-rental-aggregator)
-- [Ko-fi](https://ko-fi.com/studentrentalaggregator)
-- [Buy Me a Coffee](https://www.buymeacoffee.com/studentrental)
-
-### Sponsorship Tiers
-
-#### 🌱 Supporter (€5/month)
-- Name in our GitHub README
-- Access to supporter-only Discord channel
-
-#### 🌟 Bronze Sponsor (€20/month)
-- Everything in Supporter tier
-- Early access to new features
-- Priority issue support
-
-#### 💫 Silver Sponsor (€50/month)
-- Everything in Bronze tier
-- Logo in our README
-- Monthly consultation call
-
-#### 🎯 Gold Sponsor (€200/month)
-- Everything in Silver tier
-- Featured sponsor status
-- Custom feature prioritization
-- Direct development support
-
-#### 🚀 Platinum Sponsor (€500/month)
-- Everything in Gold tier
-- Logo on landing page
-- Dedicated support channel
-- Influence on roadmap
-
-## 💝 Our Sponsors
-
-### 🎯 Gold Sponsors
-<!-- gold-sponsors --><!-- gold-sponsors -->
-
-### 💫 Silver Sponsors
-<!-- silver-sponsors --><!-- silver-sponsors -->
-
-### 🌟 Bronze Sponsors
-<!-- bronze-sponsors --><!-- bronze-sponsors -->
-
-### 🌱 Supporters
-<!-- supporters --><!-- supporters -->
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-## 👥 Team
-
-- Backend Developers
-- Frontend Developers
-- UI/UX Designers
-- DevOps Engineers
-
-## 📞 Support
-
-For support, please:
-1. Check the documentation
-2. Open an issue
-3. Contact the development team
-
-## 🌟 Acknowledgments
-
-- FastAPI team
-- React team
-- Material-UI team
-- MongoDB team
-- All contributors

@@ -45,7 +45,7 @@ const DatesDropdown = ({
       <div className="flex space-x-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            {t('checkIn')}
+            {t('datesDropdown.checkInLabel')}
           </label>
           <input
             type="date"
@@ -57,7 +57,7 @@ const DatesDropdown = ({
         </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            {t('checkOut')}
+            {t('datesDropdown.checkOutLabel')}
           </label>
           <input
             type="date"
@@ -74,7 +74,7 @@ const DatesDropdown = ({
           onClick={onClose}
           className="px-3 py-1 text-sm text-gray-600 hover:text-gray-800"
         >
-          {t('cancel')}
+          {t('datesDropdown.cancel')}
         </button>
         <button
           onClick={handleApply}
@@ -86,7 +86,7 @@ const DatesDropdown = ({
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'}
           `}
         >
-          {t('apply')}
+          {t('datesDropdown.apply')}
         </button>
       </div>
     </div>

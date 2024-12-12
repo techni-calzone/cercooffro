@@ -8,19 +8,19 @@ export default function ContactPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">{t('contactTitle')}</h1>
+      <h1 className="text-3xl font-bold mb-6">{t('contact.contactTitle')}</h1>
       
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">{t('getInTouch')}</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('contact.getInTouch')}</h2>
             <p className="text-gray-600 mb-6">
-              {t('contactDescription')}
+              {t('contact.contactDescription')}
             </p>
           </section>
 
           <section className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">{t('contactMethods')}</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('contact.contactMethods')}</h3>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
                 <div className="text-cercooffro-primary">
@@ -29,7 +29,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold">{t('email')}</h4>
+                  <h4 className="font-semibold">{t('contact.email')}</h4>
                   <p className="text-gray-600">support@cercooffro.it</p>
                 </div>
               </div>
@@ -41,7 +41,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold">{t('phone')}</h4>
+                  <h4 className="font-semibold">{t('contact.phone')}</h4>
                   <p className="text-gray-600">+39 XXX XXX XXXX</p>
                 </div>
               </div>
@@ -54,22 +54,22 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold">{t('address')}</h4>
-                  <p className="text-gray-600">{t('addressDetails')}</p>
+                  <h4 className="font-semibold">{t('contact.address')}</h4>
+                  <p className="text-gray-600">{t('contact.addressDetails')}</p>
                 </div>
               </div>
             </div>
           </section>
 
           <section className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">{t('supportHours')}</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('contact.supportHours')}</h3>
             <p className="text-gray-600">
-              {t('supportAvailability')}
+              {t('contact.supportAvailability')}
             </p>
           </section>
 
           <section>
-            <h3 className="text-xl font-semibold mb-4">{t('followUs')}</h3>
+            <h3 className="text-xl font-semibold mb-4">{t('contact.followUs')}</h3>
             <div className="flex space-x-4">
               <a href="https://twitter.com/cercooffro" target="_blank" rel="noopener noreferrer" className="text-cercooffro-primary hover:text-cercooffro-secondary">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">

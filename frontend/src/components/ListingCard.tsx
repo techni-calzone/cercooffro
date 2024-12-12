@@ -30,7 +30,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
       {/* Image Carousel */}
       <div className="aspect-[4/3] relative rounded-t-xl overflow-hidden">
         <Image 
-          src={listing.images[0]} 
+          src={listing.images && listing.images.length > 0 ? listing.images[0] : '/images/placeholder.jpg'} 
           alt={listing.title}
           fill
           priority

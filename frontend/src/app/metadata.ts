@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     images: ['/images/italian-university-campus-1.jpg']
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico'
+    icon: '/favicon.svg',
+    apple: '/favicon.svg'
   }
 };

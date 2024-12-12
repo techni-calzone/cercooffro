@@ -10,6 +10,10 @@ const LOCATIONS = [
   'Napoli', 'Palermo', 'Genova', 'Venice', 'Verona'
 ];
 
+const STUDY_LEVELS = ['Undergraduate', 'Graduate', 'PhD', 'Postdoc'];
+const FINANCIAL_STATUSES = ['Student', 'Working Student', 'Scholarship', 'Other'];
+const SEX_OPTIONS = ['Male', 'Female', 'Other'];
+
 export const SearcherProfileForm: React.FC<{
   onCancel?: () => void;
   onSubmit?: () => void;
@@ -85,594 +89,227 @@ export const SearcherProfileForm: React.FC<{
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Telegram Username */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            {t('searchersPage.telegramUsername')}
-          </label>
-          <input 
-            type="text" 
-            value={profile.personalInfo?.contactInfo?.telegramUsername}
-            onChange={(e) => setProfile(prev => ({
-              ...prev, 
-              personalInfo: {
-                ...prev.personalInfo!,
-                contactInfo: {
-                  ...prev.personalInfo!.contactInfo!,
-                  telegramUsername: e.target.value
-                }
-              }
-            }))}
-            placeholder="@username"
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            required
-          />
-        </div>
-
         {/* Personal Information Section */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* First Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.firstName')}
-            </label>
-            <input 
-              type="text" 
-              value={profile.personalInfo?.firstName}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  firstName: e.target.value
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold mb-4">{t('searchersPage.personalInfo.title')}</h3>
+            
+          {/* Contact Information */}
+          <div className="mb-4">
+            <h4 className="text-md font-medium mb-3">{t('searchersPage.personalInfo.contactInfo.title')}</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  {t('searchersPage.personalInfo.contactInfo.telegramUsername')}
+                </label>
+                <input 
+                  type="text"
+                  value={profile.personalInfo?.contactInfo?.telegramUsername}
+                  onChange={(e) => setProfile(prev => ({
+                    ...prev,
+                    personalInfo: {
+                      ...prev.personalInfo!,
+                      contactInfo: {
+                        ...prev.personalInfo!.contactInfo!,
+                        telegramUsername: e.target.value
+                      }
+                    }
+                  }))}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  {t('searchersPage.personalInfo.contactInfo.email')}
+                </label>
+                <input 
+                  type="email"
+                  value={profile.personalInfo?.contactInfo?.email}
+                  onChange={(e) => setProfile(prev => ({
+                    ...prev,
+                    personalInfo: {
+                      ...prev.personalInfo!,
+                      contactInfo: {
+                        ...prev.personalInfo!.contactInfo!,
+                        email: e.target.value
+                      }
+                    }
+                  }))}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* Last Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.lastName')}
-            </label>
-            <input 
-              type="text" 
-              value={profile.personalInfo?.lastName}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  lastName: e.target.value
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
-
-          {/* Age */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.age')}
-            </label>
-            <input 
-              type="number" 
-              value={profile.personalInfo?.age}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  age: Number(e.target.value)
-                }
-              }))}
-              min={0}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
-
-          {/* Nationality */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.nationality')}
-            </label>
-            <input 
-              type="text" 
-              value={profile.personalInfo?.nationality}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  nationality: e.target.value
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
-
-          {/* Sex */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.sex')}
-            </label>
-            <select
-              value={profile.personalInfo?.sex}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  sex: e.target.value as Sex
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            >
-              {getTranslationOptions('sexOptions').map((option: string) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.email')}
-            </label>
-            <input 
-              type="email" 
-              value={profile.personalInfo?.contactInfo?.email}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  contactInfo: {
-                    ...prev.personalInfo!.contactInfo!,
-                    email: e.target.value
+          {/* Basic Information */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.personalInfo.firstName')}
+              </label>
+              <input 
+                type="text"
+                value={profile.personalInfo?.firstName}
+                onChange={(e) => setProfile(prev => ({
+                  ...prev,
+                  personalInfo: {
+                    ...prev.personalInfo!,
+                    firstName: e.target.value
                   }
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
+                }))}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+              />
+            </div>
 
-          {/* Phone Number */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.personalInfo.phoneNumber')}
-            </label>
-            <input 
-              type="tel" 
-              value={profile.personalInfo?.contactInfo?.phoneNumber}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                personalInfo: {
-                  ...prev.personalInfo!,
-                  contactInfo: {
-                    ...prev.personalInfo!.contactInfo!,
-                    phoneNumber: e.target.value
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.personalInfo.lastName')}
+              </label>
+              <input 
+                type="text"
+                value={profile.personalInfo?.lastName}
+                onChange={(e) => setProfile(prev => ({
+                  ...prev,
+                  personalInfo: {
+                    ...prev.personalInfo!,
+                    lastName: e.target.value
                   }
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
+                }))}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.personalInfo.sex')}
+              </label>
+              <select
+                value={profile.personalInfo?.sex || ''}
+                onChange={(e) => setProfile(prev => ({
+                  ...prev,
+                  personalInfo: {
+                    ...prev.personalInfo!,
+                    sex: e.target.value as Sex
+                  }
+                }))}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+              >
+                <option value="">{t('common.select')}</option>
+                {SEX_OPTIONS.map((option: string) => (
+                  <option key={option} value={option}>{t(`searchersPage.options.sex.${option.toLowerCase()}`)}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
         {/* Academic Profile Section */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* University */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.academicProfile.university')}
-            </label>
-            <input 
-              type="text" 
-              value={profile.academicProfile?.university}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                academicProfile: {
-                  ...prev.academicProfile!,
-                  university: e.target.value
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold mb-4">{t('searchersPage.academicProfile.title')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.academicProfile.university')}
+              </label>
+              <input 
+                type="text"
+                value={profile.academicProfile?.university}
+                onChange={(e) => setProfile(prev => ({
+                  ...prev,
+                  academicProfile: {
+                    ...prev.academicProfile!,
+                    university: e.target.value
+                  }
+                }))}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+              />
+            </div>
 
-          {/* Study Level */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.academicProfile.studyLevel')}
-            </label>
-            <select
-              value={profile.academicProfile?.studyLevel}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                academicProfile: {
-                  ...prev.academicProfile!,
-                  studyLevel: e.target.value as StudyLevel
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            >
-              {getTranslationOptions('studyLevelOptions').map((option: string) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Study Field */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.academicProfile.studyField')}
-            </label>
-            <select
-              value={profile.academicProfile?.studyField}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                academicProfile: {
-                  ...prev.academicProfile!,
-                  studyField: e.target.value as StudyField
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            >
-              {getTranslationOptions('studyFieldOptions').map((option: string) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Department */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.academicProfile.department')}
-            </label>
-            <input 
-              type="text" 
-              value={profile.academicProfile?.department}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                academicProfile: {
-                  ...prev.academicProfile!,
-                  department: e.target.value
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
-
-          {/* Expected Graduation */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.academicProfile.expectedGraduation')}
-            </label>
-            <input 
-              type="date" 
-              value={profile.academicProfile?.expectedGraduation?.toISOString().split('T')[0]}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                academicProfile: {
-                  ...prev.academicProfile!,
-                  expectedGraduation: new Date(e.target.value)
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.academicProfile.studyLevel')}
+              </label>
+              <select
+                value={profile.academicProfile?.studyLevel}
+                onChange={(e) => setProfile(prev => ({
+                  ...prev,
+                  academicProfile: {
+                    ...prev.academicProfile!,
+                    studyLevel: e.target.value as StudyLevel
+                  }
+                }))}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+              >
+                <option value="">{t('common.select')}</option>
+                {STUDY_LEVELS.map((option: string) => (
+                  <option key={option} value={option}>{t(`searchersPage.options.studyLevel.${option.toLowerCase()}`)}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
-        {/* Financial Info Section */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Monthly Income */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.financialInfo.monthlyIncome')} (€)
-            </label>
-            <input 
-              type="number" 
-              value={profile.financialInfo?.monthlyIncome}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                financialInfo: {
-                  ...prev.financialInfo!,
-                  monthlyIncome: Number(e.target.value)
-                }
-              }))}
-              min={0}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
-
-          {/* Financial Status */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.financialInfo.financialStatus')}
-            </label>
-            <select
-              value={profile.financialInfo?.financialStatus}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                financialInfo: {
-                  ...prev.financialInfo!,
-                  financialStatus: e.target.value as FinancialStatus
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            >
-              {getTranslationOptions('financialStatusOptions').map((option: string) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Budget Preference */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.financialInfo.budgetPreference')}
-            </label>
-            <div className="flex space-x-4">
+        {/* Financial Information Section */}
+        <div className="mb-6">
+          <h3 className="text-lg font-semibold mb-4">{t('searchersPage.financialInfo.title')}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.financialInfo.monthlyIncome')}
+              </label>
               <input 
-                type="number" 
-                value={profile.financialInfo?.budgetPreference.min}
+                type="number"
+                value={profile.financialInfo?.monthlyIncome}
                 onChange={(e) => setProfile(prev => ({
                   ...prev,
                   financialInfo: {
                     ...prev.financialInfo!,
-                    budgetPreference: { 
-                      ...prev.financialInfo!.budgetPreference, 
-                      min: Number(e.target.value) 
-                    }
+                    monthlyIncome: Number(e.target.value)
                   }
                 }))}
-                min={100}
-                max={2000}
-                className="w-full rounded-md border-gray-300"
-                placeholder="Min Budget"
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
               />
-              <input 
-                type="number" 
-                value={profile.financialInfo?.budgetPreference.max}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                {t('searchersPage.financialInfo.financialStatus')}
+              </label>
+              <select
+                value={profile.financialInfo?.financialStatus}
                 onChange={(e) => setProfile(prev => ({
                   ...prev,
                   financialInfo: {
                     ...prev.financialInfo!,
-                    budgetPreference: { 
-                      ...prev.financialInfo!.budgetPreference, 
-                      max: Number(e.target.value) 
-                    }
+                    financialStatus: e.target.value
                   }
                 }))}
-                min={100}
-                max={2000}
-                className="w-full rounded-md border-gray-300"
-                placeholder="Max Budget"
-              />
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
+              >
+                <option value="">{t('common.select')}</option>
+                {FINANCIAL_STATUSES.map((option: string) => (
+                  <option key={option} value={option}>{t(`searchersPage.options.financialStatus.${option.toLowerCase().replace(' ', '_')}`)}</option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
 
-        {/* Housing Preferences Section */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Desired Location */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.housingPreferences.desiredLocation')}
-            </label>
-            <div className="grid grid-cols-3 gap-2">
-              {LOCATIONS.map(location => (
-                <label key={location} className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={profile.housingPreferences?.desiredLocation.includes(location)}
-                    onChange={(e) => {
-                      const isChecked = e.target.checked;
-                      setProfile(prev => ({
-                        ...prev,
-                        housingPreferences: {
-                          ...prev.housingPreferences!,
-                          desiredLocation: isChecked
-                            ? [...prev.housingPreferences!.desiredLocation, location]
-                            : prev.housingPreferences!.desiredLocation.filter(l => l !== location)
-                        }
-                      }));
-                    }}
-                    className="form-checkbox text-cercooffro-primary"
-                  />
-                  <span className="ml-2">{location}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Move-in Date */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.housingPreferences.moveInDate')}
-            </label>
-            <input 
-              type="date" 
-              value={profile.housingPreferences?.moveInDate.toISOString().split('T')[0]}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                housingPreferences: {
-                  ...prev.housingPreferences!,
-                  moveInDate: new Date(e.target.value)
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300"
-            />
-          </div>
-
-          {/* Stay Duration */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.housingPreferences.stayDuration')}
-            </label>
-            <div className="flex space-x-4">
-              <input 
-                type="number" 
-                value={profile.housingPreferences?.stayDuration.min}
-                onChange={(e) => setProfile(prev => ({
-                  ...prev,
-                  housingPreferences: {
-                    ...prev.housingPreferences!,
-                    stayDuration: { 
-                      ...prev.housingPreferences!.stayDuration, 
-                      min: Number(e.target.value) 
-                    }
-                  }
-                }))}
-                min={1}
-                max={24}
-                className="w-full rounded-md border-gray-300"
-                placeholder="Min Months"
-              />
-              <input 
-                type="number" 
-                value={profile.housingPreferences?.stayDuration.max}
-                onChange={(e) => setProfile(prev => ({
-                  ...prev,
-                  housingPreferences: {
-                    ...prev.housingPreferences!,
-                    stayDuration: { 
-                      ...prev.housingPreferences!.stayDuration, 
-                      max: Number(e.target.value) 
-                    }
-                  }
-                }))}
-                min={1}
-                max={24}
-                className="w-full rounded-md border-gray-300"
-                placeholder="Max Months"
-              />
-            </div>
-          </div>
-
-          {/* Group Size */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.housingPreferences.groupSize')}
-            </label>
-            <input 
-              type="number" 
-              value={profile.housingPreferences?.groupSize}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                housingPreferences: {
-                  ...prev.housingPreferences!,
-                  groupSize: Number(e.target.value)
-                }
-              }))}
-              min={1}
-              max={10}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            />
-          </div>
-        </div>
-
-        {/* Lifestyle Preferences Section */}
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Smoking Preference */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.lifestylePreferences.smokingPreference')}
-            </label>
-            <select
-              value={profile.lifestylePreferences?.smokingPreference}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                lifestylePreferences: {
-                  ...prev.lifestylePreferences!,
-                  smokingPreference: e.target.value as SmokingPreference
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            >
-              {getTranslationOptions('smokingPreferenceOptions').map((option: string) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Alcohol Preference */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.lifestylePreferences.alcoholPreference')}
-            </label>
-            <select
-              value={profile.lifestylePreferences?.alcoholPreference}
-              onChange={(e) => setProfile(prev => ({
-                ...prev,
-                lifestylePreferences: {
-                  ...prev.lifestylePreferences!,
-                  alcoholPreference: e.target.value as AlcoholPreference
-                }
-              }))}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cercooffro-primary focus:ring focus:ring-cercooffro-primary/50"
-            >
-              {getTranslationOptions('alcoholPreferenceOptions').map((option: string) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Dietary Restrictions */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              {t('searchersPage.lifestylePreferences.dietaryRestrictions')}
-            </label>
-            <div className="grid grid-cols-3 gap-2">
-              {getTranslationOptions('dietaryRestrictionsOptions').map((option: string) => (
-                <label key={option} className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={profile.lifestylePreferences?.dietaryRestrictions.includes(option)}
-                    onChange={(e) => {
-                      const isChecked = e.target.checked;
-                      setProfile(prev => ({
-                        ...prev,
-                        lifestylePreferences: {
-                          ...prev.lifestylePreferences!,
-                          dietaryRestrictions: isChecked
-                            ? [...prev.lifestylePreferences!.dietaryRestrictions, option]
-                            : prev.lifestylePreferences!.dietaryRestrictions.filter(r => r !== option)
-                        }
-                      }));
-                    }}
-                    className="form-checkbox text-cercooffro-primary"
-                  />
-
-                  <span className="ml-2">{option}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Submit Button */}
-        <div className="flex justify-end space-x-4 mt-6">
-          <button 
-            type="button" 
+        {/* Form Actions */}
+        <div className="flex justify-end space-x-4">
+          <button
+            type="button"
             onClick={onCancel}
-            className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md"
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cercooffro-primary"
           >
-            {t('searchersPage.form.cancel')}
+            {t('cancel')}
           </button>
-          <button 
-            type="submit" 
-            className="px-4 py-2 bg-cercooffro-primary text-white rounded-md hover:bg-opacity-90"
+          <button
+            type="submit"
+            className="px-4 py-2 text-sm font-medium text-white bg-cercooffro-primary border border-transparent rounded-md hover:bg-cercooffro-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cercooffro-primary"
           >
-            {t('searchersPage.form.submit')}
+            {t('save')}
           </button>
         </div>
       </form>

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import enTranslations from '../translations/en.json';
-import itTranslations from '../translations/it.json';
+import enTranslations from '../locales/en.json';
+import itTranslations from '../locales/it.json';
 
 // Define translation interface
 interface Translations {
@@ -18,13 +18,13 @@ const translations: Translations = {
 // Create context
 interface LanguageContextType {
   language: string;
-  toggleLanguage: () => void;
+  setLanguage: (lang: string) => void;
   t: (key: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
   language: 'en',
-  toggleLanguage: () => {},
+  setLanguage: () => {},
   t: () => '',
 });
 
@@ -43,10 +43,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
   }, []);
 
-  const toggleLanguage = () => {
-    const newLang = language === 'en' ? 'it' : 'en';
-    setLanguage(newLang);
-    localStorage.setItem('language', newLang);
+  const handleSetLanguage = (newLang: string) => {
+    if (['en', 'it'].includes(newLang)) {
+      setLanguage(newLang);
+      localStorage.setItem('language', newLang);
+    }
   };
 
   // Translation function
@@ -66,7 +67,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
