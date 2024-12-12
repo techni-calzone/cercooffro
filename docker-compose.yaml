@@ -21,7 +21,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     environment:
-      - MONGODB_URI=${MONGODB_URI}
+      - MONGODB_URL=${MONGODB_URI}
       - MONGODB_DB_NAME=${MONGODB_DB_NAME}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - APP_NAME="CercoOffro"
