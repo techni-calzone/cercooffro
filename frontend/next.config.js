@@ -34,9 +34,6 @@ const nextConfig = {
       },
     ],
   },
-  // Add metadata base for social sharing and image resolution
-  metadataBase: new URL('https://cercooffro.it.com/'),
-
   // Add script for Google AdSense and Telegram
   async headers() {
     return [
