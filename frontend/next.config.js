@@ -14,10 +14,28 @@ const nextConfig = {
         port: '',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'localhost',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cercooffro.it.com',
+        port: '',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'technicalz.one',
+        port: '',
+        pathname: '**',
+      },
     ],
   },
   // Add metadata base for social sharing and image resolution
-  // metadataBase: new URL('https://www.cercooffro.it/'),
+  metadataBase: new URL('https://cercooffro.it.com/'),
 
   // Add script for Google AdSense and Telegram
   async headers() {
