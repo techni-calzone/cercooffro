@@ -32,7 +32,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL}
       - CORS_ORIGINS="http://localhost:3000,http://frontend:3000,https://cercooffro.it.com"
     ports:
-      - "8000:8000"
+      - "8005:8000"
     networks:
       - app-network
     restart: unless-stopped
