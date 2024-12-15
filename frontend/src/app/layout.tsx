@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import RootLayoutClient from '@/components/layout/RootLayoutClient';
 import { AuthProvider } from '@/context/AuthContext';
-import Head from 'next/head'; // Import Head component
+import Script from 'next/script'; 
 
 // Initialize Inter font
 const inter = Inter({ 
@@ -35,14 +35,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <Head>
-        <script 
+      <head />
+      <body>
+        <Script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7508445426374362"
           crossOrigin="anonymous"
-        ></script>
-      </Head>
-      <body>
+          strategy="afterInteractive"
+        />
         <AuthProvider>
           <RootLayoutClient>
             {children}

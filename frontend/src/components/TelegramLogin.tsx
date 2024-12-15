@@ -2,6 +2,8 @@
 
 import React, { useEffect } from 'react';
 import { useAuth } from '@/context/AuthContext';
+import { toast } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 interface TelegramLoginProps {
   botName: string;
@@ -29,10 +31,9 @@ export default function TelegramLogin({
   className = '',
 }: TelegramLoginProps) {
   const { loginWithTelegram } = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
-    console.log("useEffect running, adding Telegram script"); 
-
     // Initialize Telegram Login Widget
     const script = document.createElement('script');
     script.src = 'https://telegram.org/js/telegram-widget.js?22';
@@ -48,13 +49,15 @@ export default function TelegramLogin({
     const container = document.getElementById('telegram-login-container');
     if (container) {
       container.appendChild(script);
-    } else {
-      console.error("telegram-login-container not found in the DOM"); // Helpful error message
     }
 
     const handleAuth = async (user: any) => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/telegram/validate`, {
+        if (!user || !user.id) {
+          throw new Error('Invalid login response');
+        }
+
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/telegram/verify`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -62,14 +65,17 @@ export default function TelegramLogin({
           body: JSON.stringify(user),
         });
 
-        if (response.ok) {
-          const userData = await response.json();
-          await loginWithTelegram(userData);
-        } else {
-          console.error('Authentication failed');
+        if (!response.ok) {
+          throw new Error('Failed to verify Telegram login');
         }
+
+        const userData = await response.json();
+        await loginWithTelegram(userData);
+        toast.success('Successfully logged in!');
+        router.push('/');
       } catch (error) {
         console.error('Error during Telegram authentication:', error);
+        toast.error('Failed to login. Please try again.');
       }
     };
 
@@ -80,15 +86,14 @@ export default function TelegramLogin({
     return () => {
       // Cleanup
       if (container && container.contains(script)) {
-        console.log("Cleaning up Telegram script");
         container.removeChild(script);
       }
     };
-  }, [botName, buttonSize, cornerRadius, requestAccess, usePic, loginWithTelegram]);
+  }, [botName, buttonSize, cornerRadius, requestAccess, usePic, loginWithTelegram, router]);
 
   return (
     <div id="telegram-login-container" className={className}>
-      {/* Telegram Login Widget will be rendered here (no extra script tag!) */}
+      {/* Telegram Login Widget will be rendered here */}
     </div>
   );
 }

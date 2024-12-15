@@ -354,11 +354,19 @@
         "Get personalized recommendations based on your preferences"
     ],
     "login": {
-        "notice": "Don't worry, your data is safe with us!",
-        "download_notice": "Don't have Telegram? Get it now!",
-        "sign_in": "Sign in to your account",
-        "use_telegram": "Use your Telegram account to continue",
-        "download_button": "Download Telegram and sign up"
+        "title": "Sign in to your account",
+        "description": "Connect with your Telegram account to access your student housing dashboard",
+        "success": "Successfully logged in!",
+        "error": "Failed to login. Please try again.",
+        "telegram_button": "Sign in with Telegram",
+        "or": "Or",
+        "email_placeholder": "Email address",
+        "password_placeholder": "Password",
+        "remember_me": "Remember me",
+        "forgot_password": "Forgot your password?",
+        "sign_in": "Sign in",
+        "no_account": "Don't have an account?",
+        "register": "Register here"
     },
     "addListing": {
       "title": "Add New Listing",
@@ -452,6 +460,24 @@
           "fetch": "Failed to load profile",
           "notFound": "Profile Not Found",
           "tryAgain": "Please try again later"
+        }
+    },
+    "contact": {
+        "contactTitle": "Contact Us",
+        "getInTouch": "Get in Touch",
+        "contactDescription": "Have questions about student housing or need assistance? We're here to help! Reach out to us through any of the following channels.",
+        "contactMethods": "Contact Methods",
+        "email": "Email",
+        "phone": "Phone",
+        "address": "Address",
+        "addressDetails": "Via Roma 123, 20121 Milan, Italy",
+        "supportHours": "Support Hours",
+        "supportAvailability": "Our support team is available Monday to Friday, 9:00 AM to 6:00 PM (CET)",
+        "followUs": "Follow Us",
+        "socialMedia": {
+            "twitter": "Follow us on Twitter",
+            "facebook": "Follow us on Facebook",
+            "instagram": "Follow us on Instagram"
         }
     }
 }

@@ -16,7 +16,6 @@ import {
   FaUniversity
 } from 'react-icons/fa';
 import { useLanguage } from '@/context/LanguageContext';
-import Script from 'next/script';
 import { ClientLayout, Footer, NavBar } from '@/components/layout';
 import { HeroSection, BackgroundSlideshow, CommunityBanner } from '@/components/features';
 import { AdBanner, AdBlockerModal, GoogleAd } from '@/components/features/ads/index';
@@ -274,32 +273,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Google AdSense Banner */}
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=your-client-id"
-              crossOrigin="anonymous"
-            />
-            <ins
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client="your-client-id"
-              data-ad-slot="your-ad-slot"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-            <Script id="adsense-init">
-              {`
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              `}
-            </Script>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section with Improved Design */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -359,27 +332,6 @@ const HomePage = () => {
                 {t('home.supportProject')}
               </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom Google AdSense Banner */}
-      <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <ins
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client="your-client-id"
-              data-ad-slot="your-bottom-ad-slot"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-            <Script id="adsense-init-bottom">
-              {`
-                (adsbygoogle = window.adsbygoogle || []).push({});
-              `}
-            </Script>
           </div>
         </div>
       </section>

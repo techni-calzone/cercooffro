@@ -4,38 +4,42 @@ An AI-powered rental aggregation platform designed specifically for students in 
 
 ## ✨ Features
 
-- 🔍 Advanced search with multiple filters
+- 🔍 Advanced search with multiple filters and responsive dropdowns
 - 🤖 AI-powered recommendations
 - 🔐 Secure Telegram authentication
 - 🌍 Multilingual support (Italian/English)
-- 📱 Responsive design
+- 📱 Responsive design for all devices
 - 📊 Analytics and monitoring
 - 🏫 University-focused listings
 - 🤝 Student community features
-
- 
+- 🎯 Intuitive mobile-first interface
+- 🔄 Real-time search updates
 
 ## 🛠 Tech Stack
-
- 
 
 ### Frontend
 - Next.js 13+
 - Tailwind CSS
 - i18next for localization
 - Telegram Login Widget
+- React Hook Form with Zod validation
+- Responsive UI components
+- Mobile-optimized dropdowns and filters
 
 ### Backend
 - FastAPI
 - MongoDB Atlas
 - Python 3.11
 - OpenAI integration
+- Secure authentication flow
+- Role-based access control
 
 ### Infrastructure
 - Docker
 - Coolify for deployment
 - MongoDB Atlas
 - Telegram Bot API
+- CORS security configuration
 
 ## 🚀 Quick Start
 
@@ -60,15 +64,31 @@ An AI-powered rental aggregation platform designed specifically for students in 
    uvicorn app.main:app --reload
    ```
 
-## 🌍 Environment Variables
+## 📱 Mobile Responsiveness
 
-### Required Environment Variables:
-- `MONGODB_URI`: MongoDB Atlas connection string
-- `MONGODB_DB_NAME`: Database name
-- `TELEGRAM_BOT_TOKEN`: Telegram Bot API token
-- `TELEGRAM_BOT_NAME`: Your Telegram bot's username
-- `NEXT_PUBLIC_API_URL`: Backend API URL
-- `NEXT_PUBLIC_BOT_NAME`: Telegram bot name for frontend
+The application is designed with a mobile-first approach:
+
+- Adaptive search interface with optimized dropdowns
+- Touch-friendly UI elements with proper spacing
+- Responsive layouts that adjust to screen size
+- Improved touch targets for better mobile interaction
+- Smart positioning of UI elements on small screens
+
+## 🌐 Localization
+
+The application supports multiple languages:
+- English (default)
+- Italian
+- Easy addition of new languages through i18n
+- Consistent translations across all components
+
+## 🔒 Security
+
+- Secure Telegram authentication
+- Protected API endpoints
+- Role-based access control
+- Environment variable management
+- CORS configuration for production
 
 ## 📦 Deployment
 
@@ -84,19 +104,17 @@ Key deployment features:
 - Secure Telegram authentication
 - Multi-language support (IT/EN)
 
-## 🌐 Localization
+## 📖 Documentation
 
-The application supports both Italian and English languages:
-- Frontend translations in `src/locales/{it,en}.json`
-- Dynamic language switching
-- SEO-friendly content in both languages
+For detailed documentation on:
+- API endpoints
+- Component usage
+- Deployment process
+- Environment setup
+- Localization guide
+- Mobile responsiveness guidelines
 
-## 🔐 Security
-
-- Authentication via Telegram
-- No storage of sensitive user data
-- Secure API endpoints
-- CORS protection with specific origins
+Please refer to the `/docs` directory.
 
 ## 📝 License
 

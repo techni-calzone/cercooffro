@@ -38,13 +38,10 @@ const DatesDropdown = ({
   };
 
   return (
-    <div 
-      ref={dropdownRef}
-      className="absolute z-20 top-full mt-2 bg-white rounded-xl shadow-lg p-4"
-    >
-      <div className="flex space-x-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+    <div ref={dropdownRef} className="w-full p-4">
+      <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4">
+        <div className="flex-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             {t('datesDropdown.checkInLabel')}
           </label>
           <input
@@ -52,11 +49,11 @@ const DatesDropdown = ({
             value={startDate?.toISOString().split('T')[0] || ''}
             onChange={(e) => setStartDate(new Date(e.target.value))}
             min={new Date().toISOString().split('T')[0]}
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cercooffro-primary"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cercooffro-primary"
           />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+        <div className="flex-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
             {t('datesDropdown.checkOutLabel')}
           </label>
           <input
@@ -64,15 +61,15 @@ const DatesDropdown = ({
             value={endDate?.toISOString().split('T')[0] || ''}
             onChange={(e) => setEndDate(new Date(e.target.value))}
             min={startDate ? startDate.toISOString().split('T')[0] : new Date().toISOString().split('T')[0]}
-            className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cercooffro-primary"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cercooffro-primary"
           />
         </div>
       </div>
       
-      <div className="flex justify-end mt-4 space-x-2">
+      <div className="flex justify-end mt-6 space-x-3 border-t border-gray-200 pt-4">
         <button
           onClick={onClose}
-          className="px-3 py-1 text-sm text-gray-600 hover:text-gray-800"
+          className="px-4 py-2 text-sm text-gray-600 hover:text-gray-800 rounded-lg hover:bg-gray-100 transition-colors"
         >
           {t('datesDropdown.cancel')}
         </button>
@@ -80,7 +77,7 @@ const DatesDropdown = ({
           onClick={handleApply}
           disabled={!startDate || !endDate}
           className={`
-            px-3 py-1 text-sm rounded-lg
+            px-6 py-2 text-sm rounded-lg transition-colors
             ${startDate && endDate
               ? 'bg-cercooffro-primary text-white hover:bg-cercooffro-primary/90'
               : 'bg-gray-200 text-gray-400 cursor-not-allowed'}

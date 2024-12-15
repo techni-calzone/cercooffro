@@ -21,14 +21,6 @@ export default function GoogleAd({
   const [isAdEmpty, setIsAdEmpty] = useState(false);
 
   useEffect(() => {
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (error) {
-      console.error('AdSense script error:', error);
-      setIsAdEmpty(true);
-    }
-
     // Check if ad is rendered
     const checkAdRendered = () => {
       const adElement = document.querySelector(`ins[data-ad-slot="${adSlot}"]`);

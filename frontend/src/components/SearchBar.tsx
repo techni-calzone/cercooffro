@@ -34,10 +34,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
   const isSearchEnabled = location || (dates.startDate && dates.endDate) || (guests.students && guests.rooms);
 
   return (
-    <div className="w-full max-w-4xl mx-auto mb-8 relative flex flex-col md:flex-row items-center">
-      <div className="flex flex-col md:flex-row flex-grow items-center bg-white border border-gray-300 rounded-full shadow-sm md:mr-2 pr-2 md:pr-4">
+    <div className="w-full max-w-4xl mx-auto mb-8 relative flex flex-col md:flex-row items-center gap-2">
+      <div className="w-full md:w-auto flex flex-col md:flex-row flex-grow items-center bg-white border border-gray-300 rounded-lg md:rounded-full shadow-sm md:mr-2 pr-2 md:pr-4 divide-y md:divide-y-0 md:divide-x divide-gray-300">
         {/* Where */}
-        <div className="relative flex-1 md:flex-1/3 md:border-r border-gray-300 mb-2 md:mb-0">
+        <div className="relative w-full md:w-auto flex-1 md:flex-1/3">
           <div
             onClick={() => {
               setIsLocationDropdownOpen(true);
@@ -45,7 +45,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
               setIsGuestsDropdownOpen(false);
               setIsFilterDropdownOpen(false);
             }}
-            className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors rounded-full"
+            className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg md:first:rounded-l-full md:first:rounded-r-none md:last:rounded-r-full md:last:rounded-l-none"
           >
             <FaMapMarkerAlt className="text-cercooffro-primary w-4 h-4 flex-shrink-0 mr-2" />
             <div className="overflow-hidden">
@@ -53,21 +53,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
               <p className="text-xs text-gray-500 truncate max-w-[150px] md:max-w-none">{t('searchBar.searchCitiesUniversitiesOrRegions')}</p>
             </div>
           </div>
-          {isLocationDropdownOpen && (
-            <div className="absolute top-full left-0 w-full z-50 mt-2 bg-white rounded-md shadow-lg">
-              <LocationDropdown
-                onClose={() => setIsLocationDropdownOpen(false)}
-                onSelect={(loc) => {
-                  setLocation(loc);
-                  onLocationSelect(loc);
-                }}
-              />
-            </div>
-          )}
         </div>
 
         {/* When */}
-        <div className="relative flex-1 md:flex-1/3 md:border-r border-gray-300 mb-2 md:mb-0">
+        <div className="relative w-full md:w-auto flex-1 md:flex-1/3">
           <div
             onClick={() => {
               setIsDatesDropdownOpen(true);
@@ -75,7 +64,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
               setIsGuestsDropdownOpen(false);
               setIsFilterDropdownOpen(false);
             }}
-            className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors rounded-full"
+            className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg md:first:rounded-l-full md:first:rounded-r-none md:last:rounded-r-full md:last:rounded-l-none"
           >
             <FaCalendarAlt className="text-cercooffro-primary w-4 h-4 flex-shrink-0 mr-2" />
             <div className="overflow-hidden">
@@ -83,21 +72,10 @@ const SearchBar: React.FC<SearchBarProps> = ({
               <p className="text-xs text-gray-500 truncate max-w-[150px] md:max-w-none">{dates.startDate && dates.endDate ? `${dates.startDate.toLocaleDateString()} - ${dates.endDate.toLocaleDateString()}` : t('searchBar.addDates')}</p>
             </div>
           </div>
-          {isDatesDropdownOpen && (
-            <div className="absolute top-full left-0 w-full z-50 mt-2 bg-white rounded-md shadow-lg">
-              <DatesDropdown
-                onClose={() => setIsDatesDropdownOpen(false)}
-                onSelect={(dates) => {
-                  setDates(dates);
-                  onDatesSelect(dates);
-                }}
-              />
-            </div>
-          )}
         </div>
 
         {/* Who */}
-        <div className="relative flex-1 md:flex-1/3 mb-2 md:mb-0">
+        <div className="relative w-full md:w-auto flex-1 md:flex-1/3">
           <div
             onClick={() => {
               setIsGuestsDropdownOpen(true);
@@ -105,7 +83,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
               setIsDatesDropdownOpen(false);
               setIsFilterDropdownOpen(false);
             }}
-            className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors rounded-full"
+            className="flex items-center px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg md:first:rounded-l-full md:first:rounded-r-none md:last:rounded-r-full md:last:rounded-l-none"
           >
             <FaUsers className="text-cercooffro-primary w-4 h-4 flex-shrink-0 mr-2" />
             <div className="overflow-hidden">
@@ -113,22 +91,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
               <p className="text-xs text-gray-500 truncate max-w-[150px] md:max-w-none">{t('searchBar.addGuests')}</p>
             </div>
           </div>
-          {isGuestsDropdownOpen && (
-            <div className="absolute top-full left-0 w-full z-50 mt-2 bg-white rounded-md shadow-lg">
-              <GuestsDropdown
-                onClose={() => setIsGuestsDropdownOpen(false)}
-                onSelect={(guests) => {
-                  setGuests(guests);
-                  onGuestsSelect(guests);
-                }}
-              />
-            </div>
-          )}
         </div>
       </div>
 
       {/* Wrap Filter and Search Buttons in a div */}
-      <div className="relative flex items-center">
+      <div className="flex items-center gap-2 mt-2 md:mt-0">
         {/* Filter Button */}
         <button
           onClick={() => {
@@ -137,7 +104,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             setIsDatesDropdownOpen(false);
             setIsGuestsDropdownOpen(false);
           }}
-          className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 w-12 h-12 rounded-full flex items-center justify-center mx-2 transition-colors"
+          className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 w-12 h-12 rounded-full flex items-center justify-center transition-colors"
           aria-label={t('searchBar.filters')}
         >
           <FaFilter className="w-4 h-4" />
@@ -155,19 +122,48 @@ const SearchBar: React.FC<SearchBarProps> = ({
         >
           <FaSearch className={`w-5 h-5 ${isSearchEnabled ? '' : 'text-gray-500'}`} />
         </button>
+      </div>
 
-        {/* Filter Dropdown */}
-        {isFilterDropdownOpen && (
-          <div className="absolute top-full right-0 mt-2 z-50">
+      {/* Dropdowns Container */}
+      {(isLocationDropdownOpen || isDatesDropdownOpen || isGuestsDropdownOpen || isFilterDropdownOpen) && (
+        <div className="fixed inset-x-0 top-24 mx-auto z-50 w-[calc(100%-2rem)] md:w-[480px] bg-white rounded-lg shadow-lg border border-gray-200">
+          {isLocationDropdownOpen && (
+            <LocationDropdown
+              onClose={() => setIsLocationDropdownOpen(false)}
+              onSelect={(loc) => {
+                setLocation(loc);
+                onLocationSelect(loc);
+              }}
+            />
+          )}
+          {isDatesDropdownOpen && (
+            <DatesDropdown
+              onClose={() => setIsDatesDropdownOpen(false)}
+              onSelect={(dates) => {
+                setDates(dates);
+                onDatesSelect(dates);
+              }}
+            />
+          )}
+          {isGuestsDropdownOpen && (
+            <GuestsDropdown
+              onClose={() => setIsGuestsDropdownOpen(false)}
+              onSelect={(guests) => {
+                setGuests(guests);
+                onGuestsSelect(guests);
+              }}
+            />
+          )}
+          {isFilterDropdownOpen && (
             <FilterDropdown
               onClose={() => setIsFilterDropdownOpen(false)}
               onApply={(filters) => {
                 onFiltersApply(filters);
               }}
             />
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

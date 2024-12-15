@@ -356,10 +356,40 @@
         "searchLocation": "Cerca una posizione..."
     },
     "login": {
+        "title": "Accedi al tuo account",
+        "description": "Connettiti con il tuo account Telegram per accedere alla dashboard degli alloggi per studenti",
+        "success": "Accesso effettuato con successo!",
+        "error": "Accesso fallito. Per favore riprova.",
+        "telegram_button": "Accedi con Telegram",
+        "or": "Oppure",
+        "email_placeholder": "Indirizzo email",
+        "password_placeholder": "Password",
+        "remember_me": "Ricordami",
+        "forgot_password": "Password dimenticata?",
+        "sign_in": "Accedi",
+        "no_account": "Non hai un account?",
+        "register": "Registrati qui",
         "notice": "Non preoccuparti, i tuoi dati sono al sicuro con noi!",
         "download_notice": "Non hai Telegram? Scaricalo ora!",
-        "sign_in": "Accedi al tuo account",
         "use_telegram": "Usa il tuo account Telegram per continuare",
         "download_button": "Scarica Telegram e registrati"
+    },
+    "contact": {
+        "contactTitle": "Contattaci",
+        "getInTouch": "Mettiti in Contatto",
+        "contactDescription": "Hai domande sugli alloggi per studenti o hai bisogno di assistenza? Siamo qui per aiutarti! Contattaci attraverso uno dei seguenti canali.",
+        "contactMethods": "Metodi di Contatto",
+        "email": "Email",
+        "phone": "Telefono",
+        "address": "Indirizzo",
+        "addressDetails": "Via Roma 123, 20121 Milano, Italia",
+        "supportHours": "Orari di Supporto",
+        "supportAvailability": "Il nostro team di supporto è disponibile dal lunedì al venerdì, dalle 9:00 alle 18:00 (CET)",
+        "followUs": "Seguici",
+        "socialMedia": {
+            "twitter": "Seguici su Twitter",
+            "facebook": "Seguici su Facebook",
+            "instagram": "Seguici su Instagram"
+        }
     }
 }

@@ -6,8 +6,9 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     environment:
-      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
-      - NEXT_PUBLIC_BOT_NAME=${TELEGRAM_BOT_NAME}
+      - TELEGRAM_BOT_SECRET=${TELEGRAM_BOT_SECRET:-your_telegram_bot_secret}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8005/api/v1}
+      - NEXT_PUBLIC_TELEGRAM_BOT_NAME=${TELEGRAM_BOT_NAME:-cerco_offro_bot}
     ports:
       - "3005:3000"
     depends_on:
@@ -21,16 +22,16 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     environment:
-      - MONGODB_URL=${MONGODB_URI}
-      - MONGODB_DB_NAME=${MONGODB_DB_NAME}
-      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - MONGODB_URL=${MONGODB_URI:-mongodb://localhost:27017}
+      - MONGODB_DB_NAME=${MONGODB_DB_NAME:-cercooffro}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-your_telegram_bot_token}
       - APP_NAME=CercoOffro
-      - ENVIRONMENT=${ENVIRONMENT}
-      - DEBUG=${DEBUG}
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - DEBUG=${DEBUG:-True}
       - API_V1_PREFIX=/api/v1
-      - MAX_REQUESTS_PER_MINUTE=${MAX_REQUESTS_PER_MINUTE}
-      - LOG_LEVEL=${LOG_LEVEL}
-      - CORS_ORIGINS="http://localhost:3000,http://frontend:3000,https://cercooffro.it.com"
+      - MAX_REQUESTS_PER_MINUTE=${MAX_REQUESTS_PER_MINUTE:-60}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - CORS_ORIGINS="http://localhost:3005,http://frontend:3000,https://cercooffro.it.com,http://localhost:8005"
     ports:
       - "8005:8000"
     networks:

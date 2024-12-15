@@ -50,13 +50,14 @@ All notable changes to this project will be documented in this file.
   - Removed register button (registration now handled differently)
   - Improved login button with icon
   - Added links to My Profile and My Listings
-- Reorganized component structure:
-  - Moved SimpleNavbar to layout components
-  - Updated imports in layout files
-- Enhanced localization:
-  - Added new strings for profile features
-  - Added navbar-related translations
-  - Added error and success messages
+- Improved SearchBar component:
+  - Fixed responsive border radius issues
+  - Made dropdowns more mobile-friendly
+  - Improved dropdown positioning and layout
+  - Enhanced touch targets for better mobile interaction
+  - Added consistent spacing and visual hierarchy
+  - Fixed dropdown width constraints
+  - Centralized dropdown positioning for better UX
 
 ### Fixed
 - Fixed component imports in layout files
@@ -68,6 +69,12 @@ All notable changes to this project will be documented in this file.
 - Resolved axios module not found error in Telegram authentication
 - Added missing FaSignOutAlt icon import in SimpleNavbar component
 - Fixed markdown linting issue in README.md (added proper spacing around headings)
+- Fixed AdSense head tag data-nscript attribute issue in layout
+- Fixed contact page localization by adding missing translation keys
+- Fixed SearchBar dropdown positioning on mobile devices
+- Fixed border radius consistency across different screen sizes
+- Fixed various mobile responsiveness issues in dropdown components
+- Fixed localization issues in the contact page
 
 ### Removed
 - Removed duplicate translations folder (`src/translations`)
@@ -82,6 +89,9 @@ All notable changes to this project will be documented in this file.
 - Added role-based access control
 - Enhanced user data protection
 - Improved authentication flow
+- Improved Telegram authentication validation
+- Enhanced token management and security
+- Added proper CORS configuration for production
 
 ### Infrastructure
 - Configured Docker for Coolify deployment
@@ -93,6 +103,10 @@ All notable changes to this project will be documented in this file.
 - Added deployment instructions for Coolify
 - Updated environment variables documentation
 - Added localization documentation
+- Updated README with deployment instructions
+- Added environment variable documentation
+- Updated localization guide
+- Added mobile responsiveness guidelines
 
 ## [Previous Versions]
 {{ ... }}
